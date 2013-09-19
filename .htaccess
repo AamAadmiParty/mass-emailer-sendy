@@ -4,7 +4,7 @@ Options +FollowSymLinks
 Options -Multiviews
 
 RewriteEngine On
-RewriteBase /
+RewriteBase /sendy
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^([a-zA-Z0-9-]+)$ $1.php [L]
