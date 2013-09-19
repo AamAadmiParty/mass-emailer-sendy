@@ -4,13 +4,13 @@
 	//----------------------------------------------------------------------------------//
 	
 	/*  Set the URL to your Sendy installation (without the trailing slash) */
-	define('APP_PATH', 'http://your_sendy_installation_url');
+	define('APP_PATH', 'http://localhost/sendy');
 	
 	/*  MySQL database connection credentials  */
-	$dbHost = ''; //MySQL Hostname
-	$dbUser = ''; //MySQL Username
+	$dbHost = 'localhost'; //MySQL Hostname
+	$dbUser = 'root'; //MySQL Username
 	$dbPass = ''; //MySQL Password
-	$dbName = ''; //MySQL Database Name
+	$dbName = 'sendyaap'; //MySQL Database Name
 	
 	
 	//----------------------------------------------------------------------------------//	
