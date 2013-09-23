@@ -365,7 +365,7 @@
 				if($confirmation_subject=='')
 					$confirmation_subject = _('Confirm your subscription to').' '.$from_name;
 				
-				if(strlen(trim(preg_replace('/\xc2\xa0/',' ', $confirmation_email))) == 0 || trim($confirmation_email)=='<p><br></p>')
+				if(strlen(trim(preg_replace('/\xc2\xa0/',' ', $confirmation_email))) == 0 || trim($confirmation_email)=='<p><br></p>' || $output = trim(str_replace(array("\r\n", "\r"), '', $confirmation_email))=="<html><head></head><body></body></html>")
 					$confirmation_email = '<p>'._('Hi!').'</p>
 	
 <p>'._('Thanks for subscribing to our email list.').'</p>
