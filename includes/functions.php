@@ -240,7 +240,7 @@ function start_app() {
 	}
 	*/
 	if (! defined ( "CURRENT_VERSION" ))
-		define ( "CURRENT_VERSION", "1.1.7.6" );
+		define ( "CURRENT_VERSION", "1.1.7.8" );
 	/*
 	if (isset ( $_SESSION [$_SESSION ["license"]] )) {
 		if ($_SESSION [$_SESSION ["license"]] != hash ( "sha512", $_SESSION ["license"] . "2ifQ9IppVwYdOgSJoQhKOHAUK/oPwKZy" )) {
