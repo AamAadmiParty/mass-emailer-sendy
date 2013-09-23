@@ -203,7 +203,27 @@
 										      <td id="sent-status'.$id.'">'.parse_date($sent, 'long', true).'</td>
 										      <td><span class="label">'.$percentage_opened.'%</span> '.number_format($opens_unique).' '._('opened').'</td>
 										      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
-										      <td><a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a></td>
+										      <td>';
+									    
+									    if(get_app_info('is_sub_user'))
+										{
+										    echo '
+										    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
+										    <input type="hidden" name="campaign_id" value="'.$id.'"/>
+										    <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
+										    <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
+										    <script type="text/javascript">
+										    $("#duplicate-btn-direct-'.$id.'").click(function(){
+										    	$("#duplicate-form-direct-'.$id.'").submit();
+										    });
+										    </script>
+										    </form>
+										    ';
+										}
+										else
+										    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
+								      
+								        echo '</td>
 										      <td><a href="javascript:void(0)" title="Delete '.$title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
 										      <script type="text/javascript">
 										    	$("#delete-btn-'.$id.'").click(function(e){
@@ -293,6 +313,7 @@
 				  					
 				  					//CRON have not executed the sending script
 				  					else
+				  					{
 				  					echo '
 				  						<tr id="'.$id.'">
 									      <td id="label'.$id.'"><span class="label label-warning">'._('Preparing').'</span> <a href="javascript:void(0)" title="'._('Preparing to send your campaign to').' '.number_format($to_send).' '._('recipients')._(' (excluding duplicates between lists), please wait.').'">'.$title.'</a></td>
@@ -300,7 +321,27 @@
 									      <td id="sent-status'.$id.'">'._('Preparing to send').'..</td>
 									      <td><span class="label">'.$percentage_opened.'%</span> '.number_format($opens_unique).' '._('opened').'</td>
 									      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
-									      <td><a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a></td>
+									      <td>';
+									 
+									if(get_app_info('is_sub_user'))
+									{
+									    echo '
+									    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
+									    <input type="hidden" name="campaign_id" value="'.$id.'"/>
+									    <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
+									    <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
+									    <script type="text/javascript">
+									    $("#duplicate-btn-direct-'.$id.'").click(function(){
+									    	$("#duplicate-form-direct-'.$id.'").submit();
+									    });
+									    </script>
+									    </form>
+									    ';
+									}
+									else
+									    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
+									      
+									 echo '</td>
 									      <td><a href="javascript:void(0)" title="Delete '.$title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
 									      <script type="text/javascript">
 									    	$("#delete-btn-'.$id.'").click(function(e){
@@ -357,6 +398,7 @@
 											</script>
 									    </tr>
 				  					';
+				  					}
 				  				}
 				  			}
 				  				
@@ -369,7 +411,27 @@
 								      <td>-</td>
 								      <td>-</td>
 								      <td>-</td>
-								      <td><a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a></td>
+								      <td>';
+								      
+								if(get_app_info('is_sub_user'))
+								{
+								    echo '
+								    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
+								    <input type="hidden" name="campaign_id" value="'.$id.'"/>
+								    <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
+								    <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
+								    <script type="text/javascript">
+								    $("#duplicate-btn-direct-'.$id.'").click(function(){
+								    	$("#duplicate-form-direct-'.$id.'").submit();
+								    });
+								    </script>
+								    </form>
+								    ';
+								}
+								else
+								    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
+								 
+								 echo ' </td>
 								      <td><a href="javascript:void(0)" title="Delete '.$title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
 								      <script type="text/javascript">
 								    	$("#delete-btn-'.$id.'").click(function(e){
@@ -410,7 +472,27 @@
 							      <td>'.parse_date($sent, 'long', true).'</td>
 							      <td><span class="label">'.$percentage_opened.'%</span> '.number_format($opens_unique).' '._('opened').'</td>
 							      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
-							      <td><a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a></td>
+							      <td>';
+							      
+							if(get_app_info('is_sub_user'))
+							{
+							    echo '
+							    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
+							    <input type="hidden" name="campaign_id" value="'.$id.'"/>
+							    <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
+							    <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
+							    <script type="text/javascript">
+							    $("#duplicate-btn-direct-'.$id.'").click(function(){
+							    	$("#duplicate-form-direct-'.$id.'").submit();
+							    });
+							    </script>
+							    </form>
+							    ';
+							}
+							else
+							    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
+						      
+						      echo '</td>
 							      <td><a href="javascript:void(0)" title="Delete '.$title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
 							      <script type="text/javascript">
 							    	$("#delete-btn-'.$id.'").click(function(e){

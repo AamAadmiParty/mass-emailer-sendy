@@ -11,7 +11,8 @@ $(document).ready(
 			cleanup: false,
 			iframe: true,
 			fullpage: true,
-			buttons: ['html', '|', 'bold', 'italic', 'deleted', 'formatting', '|', 'link', 'image', 'file', 'table', '|', 'fontcolor', 'backcolor', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'alignment', '|', 'horizontalrule'],
+			plugins: ['fontcolor'],
+			buttons: ['html', '|', 'bold', 'italic', 'deleted', 'formatting', '|', 'link', 'image', 'file', 'table', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'alignment', '|', 'horizontalrule'],
 		    buttonsCustom: {
 	            tags: {
 	                title: "Insert tags",

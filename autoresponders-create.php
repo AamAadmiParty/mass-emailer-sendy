@@ -12,8 +12,9 @@
 	}
 ?>
 
-<script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?2"></script>
-<link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?2" />
+<script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?4"></script>
+<script src="<?php echo get_app_info('path');?>/js/redactor/fontcolor.js?4"></script>
+<link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?4" />
 <script src="<?php echo get_app_info('path');?>/js/create/editor.js?2"></script>
 
 <!-- Validation -->

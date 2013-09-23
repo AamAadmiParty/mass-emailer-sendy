@@ -23,8 +23,9 @@
 	$selected_on = '';
 ?>
 
-<script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?2"></script>
-<link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?2" />
+<script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?4"></script>
+<script src="<?php echo get_app_info('path');?>/js/redactor/fontcolor.js?4"></script>
+<link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?4" />
 <?php if(get_saved_data('wysiwyg')):
 	$html_code_msg = '<span class="wysiwyg-note">'._('Switch to HTML editor if the WYSIWYG editor is causing your newsletter to look weird.').'</span>';
 ?>
