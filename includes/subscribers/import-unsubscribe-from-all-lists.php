@@ -67,7 +67,6 @@ foreach(preg_split( "/($lineseparator|$lineseparator2)/", $csvcontent ) as $line
 		$query = 'UPDATE '.$databasetable.' SET unsubscribed = 1 WHERE email = "'.$line.'" AND userID = '.$userID;
 		mysqli_query($mysqli, $query);
 	}
-	echo $line."\n";
 }
 
 //return
