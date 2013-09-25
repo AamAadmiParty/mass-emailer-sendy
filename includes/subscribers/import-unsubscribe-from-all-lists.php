@@ -70,6 +70,6 @@ foreach(preg_split( "/($lineseparator|$lineseparator2)/", $csvcontent ) as $line
 }
 
 //return
-header("Location: ".get_app_info('path').'/subscribers?i='.$app.'&l='.$listID); 
+header("Location: ".get_app_info('path').'/subscribers?i=1&l=1'); 
 
 ?>
