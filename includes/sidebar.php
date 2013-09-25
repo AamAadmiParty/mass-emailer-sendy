@@ -6,7 +6,41 @@
     </ul>
     <ul class="nav nav-list">
         <li class="nav-header"><?php echo _('Lists & subscribers');?></li>
-        <li <?php if(currentPage()=='list.php' || currentPage()=='subscribers.php' || currentPage()=='new-list.php' || currentPage()=='update-list.php' || currentPage()=='delete-from-list.php' || currentPage()=='edit-list.php' || currentPage()=='custom-fields.php' || currentPage()=='autoresponders-list.php' || currentPage()=='autoresponders-create.php' || currentPage()=='autoresponders-emails.php' || currentPage()=='autoresponders-edit.php' || currentPage()=='autoresponders-report.php'){echo 'class="active"';}?>><a href="<?php echo get_app_info('path').'/list?i='.$_GET['i'];?>"><i class="icon-align-justify  <?php if(currentPage()=='list.php' || currentPage()=='subscribers.php' || currentPage()=='new-list.php' || currentPage()=='update-list.php' || currentPage()=='delete-from-list.php' || currentPage()=='edit-list.php' || currentPage()=='custom-fields.php' || currentPage()=='autoresponders-list.php' || currentPage()=='autoresponders-create.php' || currentPage()=='autoresponders-emails.php' || currentPage()=='autoresponders-edit.php' || currentPage()=='autoresponders-report.php'){echo 'icon-white';}?>"></i> <?php echo _('View all lists');?></a></li>
+        <li <?php if(currentPage()=='list.php' || currentPage()=='subscribers.php' || currentPage()=='new-list.php' || 
+        currentPage()=='update-list.php' || currentPage()=='delete-from-list.php' || currentPage()=='edit-list.php' || 
+        currentPage()=='custom-fields.php' || currentPage()=='autoresponders-list.php' || 
+        currentPage()=='autoresponders-create.php' || currentPage()=='autoresponders-emails.php' || 
+        currentPage()=='autoresponders-edit.php' || currentPage()=='autoresponders-report.php')
+		{
+			echo 'class="active"';
+		}
+		?>>
+		<a href="<?php echo get_app_info('path').'/list?i='.$_GET['i'];?>">
+			<i class="icon-align-justify  <?php if(currentPage()=='list.php' || currentPage()=='subscribers.php' || 
+				currentPage()=='new-list.php' || currentPage()=='update-list.php' || 
+				currentPage()=='delete-from-list.php' || currentPage()=='edit-list.php' || 
+				currentPage()=='custom-fields.php' || currentPage()=='autoresponders-list.php' || 
+				currentPage()=='autoresponders-create.php' || currentPage()=='autoresponders-emails.php' || 
+				currentPage()=='autoresponders-edit.php' || currentPage()=='autoresponders-report.php')
+				{echo 'icon-white';}
+				?>">
+			</i> 
+			<?php echo _('View all lists');?>
+		</a>
+		</li>
+		<li <?php if(currentPage()=='unsubscribe-from-all-lists.php')
+		{
+			echo 'class="active"';
+		}
+		?>>
+			<a href="<?php echo get_app_info('path').'/unsubscribe-from-all-lists.php';?>">
+				<i class="icon-align-justify  <?php if(currentPage()=='unsubscribe-from-all-lists.php')
+					{echo 'icon-white';}
+					?>">
+				</i> 
+				<?php echo _('Unsubscribe All');?>
+			</a>		
+		</li>
     </ul>
     <ul class="nav nav-list">
         <li class="nav-header"><?php echo _('Reports');?></li>

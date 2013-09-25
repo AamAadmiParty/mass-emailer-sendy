@@ -14,7 +14,7 @@ $listID = mysqli_real_escape_string($mysqli, $_POST['list_id']);
 /********************************/
 
 if(!file_exists($csvfile)) {
-	header("Location: ".get_app_info('path').'/unsubscribe-from-list?i='.$app.'&l='.$listID.'&e=3'); 
+	header("Location: ".get_app_info('path').'/unsubscribe-from-all-lists?i='.$app.'&l='.$listID.'&e=3'); 
 	exit;
 }
 
@@ -59,15 +59,15 @@ foreach(preg_split( "/($lineseparator|$lineseparator2)/", $csvcontent ) as $line
 	}
 	
 	//check if email exists to be unsubscribed
-	$q = 'SELECT email FROM subscribers WHERE list = '.$listID.' AND email = "'.$line.'" AND userID = '.$userID;
+	$q = 'SELECT email FROM subscribers WHERE email = "'.$line.'" AND userID = '.$userID;
 	$r = mysqli_query($mysqli, $q);
 	if (mysqli_num_rows($r) > 0)
 	{
 		//email exists, unsubscribe subscriber
-		$query = 'UPDATE '.$databasetable.' SET unsubscribed = 1 WHERE email = "'.$line.'" AND list = '.$listID.' AND userID = '.$userID;
+		$query = 'UPDATE '.$databasetable.' SET unsubscribed = 1 WHERE email = "'.$line.'" AND userID = '.$userID;
 		mysqli_query($mysqli, $query);
 	}
-	
+	echo $line."\n";
 }
 
 //return
