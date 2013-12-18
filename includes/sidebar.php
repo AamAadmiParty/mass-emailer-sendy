@@ -33,12 +33,25 @@
 			echo 'class="active"';
 		}
 		?>>
-			<a href="<?php echo get_app_info('path').'/unsubscribe-from-all-lists.php';?>">
+			<a href="<?php echo get_app_info('path').'/unsubscribe-from-all-lists?i='.$_GET['i'];?>">
 				<i class="icon-align-justify  <?php if(currentPage()=='unsubscribe-from-all-lists.php')
 					{echo 'icon-white';}
 					?>">
 				</i> 
 				<?php echo _('Unsubscribe All');?>
+			</a>		
+		</li>
+		<li <?php if(currentPage()=='search-and-edit-users.php')
+		{
+			echo 'class="active"';
+		}
+		?>>
+			<a href="<?php echo get_app_info('path').'/search-and-edit-users?i='.$_GET['i'];?>">
+				<i class="icon-align-justify  <?php if(currentPage()=='search-and-edit-users.php')
+					{echo 'icon-white';}
+					?>">
+				</i> 
+				<?php echo _('Search and Edit Users');?>
 			</a>		
 		</li>
     </ul>
