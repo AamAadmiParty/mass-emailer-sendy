@@ -24,6 +24,7 @@
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/responsive-tables.js"></script>
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/main.js?2"></script>
+		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/jquery.jeditable.mini.js"></script>
 		<title><?php echo get_app_info('company');?></title>
 	</head>
 	<body>
