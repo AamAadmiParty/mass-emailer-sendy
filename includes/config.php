@@ -9,7 +9,7 @@
 	/*  MySQL database connection credentials  */
 	$dbHost = 'localhost'; //MySQL Hostname
 	$dbUser = 'root'; //MySQL Username
-	$dbPass = ''; //MySQL Password
+	$dbPass = 'root'; //MySQL Password
 	$dbName = 'sendyaap'; //MySQL Database Name
 	
 	
