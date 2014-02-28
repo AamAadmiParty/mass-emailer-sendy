@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendy\n"
-"POT-Creation-Date: 2013-08-18 15:04+0800\n"
-"PO-Revision-Date: 2013-08-18 17:22+0800\n"
+"POT-Creation-Date: 2014-01-29 16:07+0800\n"
+"PO-Revision-Date: 2014-01-29 16:18+0800\n"
 "Last-Translator: Sendy <hello@sendy.co>\n"
 "Language-Team: Sendy <hello@sendy.co>\n"
-"Language: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: .\n"
 
@@ -59,7 +59,7 @@ msgid ""
 "get notified when they send a new campaign"
 msgstr ""
 
-#: app.php:50 send-to.php:334 subscribers.php:186 subscribers.php:492
+#: app.php:50 send-to.php:334 subscribers.php:194 subscribers.php:500
 #: update-list.php:191
 msgid "Okay"
 msgstr ""
@@ -69,12 +69,12 @@ msgid "Campaign title"
 msgstr ""
 
 #: app.php:59 autoresponders-report.php:161 report.php:178 reports.php:29
-#: scheduled.php:679 send-to.php:231 send-to.php:248 send-to.php:261
+#: scheduled.php:681 send-to.php:231 send-to.php:248 send-to.php:261
 #: includes/create/send-now.php:628
 msgid "Recipients"
 msgstr ""
 
-#: app.php:60 app.php:268 app.php:408 autoresponders-emails.php:62
+#: app.php:60 app.php:288 app.php:470 autoresponders-emails.php:62
 #: reports.php:30
 msgid "Sent"
 msgstr ""
@@ -87,13 +87,13 @@ msgstr ""
 msgid "Unique Clicks"
 msgstr ""
 
-#: app.php:63 app.php:503
+#: app.php:63 app.php:585
 msgid "Duplicate"
 msgstr ""
 
 #: app.php:64 autoresponders-emails.php:175 autoresponders-list.php:291
-#: custom-fields.php:83 delete-from-list.php:104 index.php:56 index.php:76
-#: list.php:35 list.php:64 reports.php:33 subscribers.php:245
+#: custom-fields.php:83 delete-from-list.php:104 index.php:62 index.php:82
+#: list.php:35 list.php:64 reports.php:33 subscribers.php:253
 msgid "Delete"
 msgstr ""
 
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Currently sending your campaign to"
 msgstr ""
 
-#: app.php:194 app.php:298 scheduled.php:660 scheduled.php:676
+#: app.php:194 app.php:319 scheduled.php:662 scheduled.php:678
 #: includes/create/send-now.php:609 includes/create/send-now.php:625
 msgid "recipients"
 msgstr ""
@@ -148,386 +148,385 @@ msgstr ""
 msgid "Resume"
 msgstr ""
 
-#: app.php:202 app.php:299 includes/list/main.php:59
+#: app.php:202 app.php:320 includes/list/main.php:59
 msgid "Checking.."
 msgstr ""
 
-#: app.php:204 app.php:301 app.php:411 autoresponders-emails.php:203
+#: app.php:204 app.php:322 app.php:473 autoresponders-emails.php:203
 #: autoresponders-report.php:197 report.php:215 reports.php:137
 msgid "opened"
 msgstr ""
 
-#: app.php:205 app.php:302 app.php:412 autoresponders-emails.php:204
+#: app.php:205 app.php:323 app.php:474 autoresponders-emails.php:204
 #: autoresponders-report.php:199 reports.php:138
 msgid "clicked"
 msgstr ""
 
-#: app.php:211 app.php:308 app.php:377 app.php:418 autoresponders-edit.php:302
+#: app.php:231 app.php:349 app.php:439 app.php:500 autoresponders-edit.php:303
 #: autoresponders-emails.php:182 autoresponders-list.php:341
-#: custom-fields.php:131 edit.php:140 reports.php:104 reports.php:143
-#: subscribers.php:360
+#: custom-fields.php:131 edit.php:141 reports.php:104 reports.php:143
+#: subscribers.php:368
 msgid "Confirm delete"
 msgstr ""
 
-#: app.php:222 app.php:319 app.php:388 app.php:429 autoresponders-edit.php:314
+#: app.php:242 app.php:360 app.php:450 app.php:511 autoresponders-edit.php:315
 #: autoresponders-emails.php:193 autoresponders-list.php:354
-#: custom-fields.php:150 edit.php:152 index.php:91 list.php:79 reports.php:115
-#: reports.php:154 subscribers.php:371
+#: custom-fields.php:150 edit.php:153 index.php:97 list.php:79 reports.php:115
+#: reports.php:154 subscribers.php:379
 msgid "Sorry, unable to delete. Please try again later!"
 msgstr ""
 
-#: app.php:231
+#: app.php:251
 msgid "Only continue if you think that sending has stopped. Resume sending?"
 msgstr ""
 
-#: app.php:241
+#: app.php:261
 msgid "Ok"
 msgstr ""
 
-#: app.php:271 app.php:408
+#: app.php:291 app.php:470
 msgid "View report for this campaign"
 msgstr ""
 
-#: app.php:282 app.php:350 includes/list/main.php:79
+#: app.php:302 app.php:391 includes/list/main.php:79
 msgid "Error retrieving count"
 msgstr ""
 
-#: app.php:298
+#: app.php:319
 msgid "Preparing"
 msgstr ""
 
-#: app.php:298
+#: app.php:319
 msgid "Preparing to send your campaign to"
 msgstr ""
 
-#: app.php:298
+#: app.php:319
 msgid " (excluding duplicates between lists), please wait."
 msgstr ""
 
-#: app.php:300
+#: app.php:321
 msgid "Preparing to send"
 msgstr ""
 
-#: app.php:367 reports.php:95
+#: app.php:409 reports.php:95
 msgid "Edit this campaign"
 msgstr ""
 
-#: app.php:367 autoresponders-emails.php:173 custom-fields.php:82 index.php:55
+#: app.php:409 autoresponders-emails.php:173 custom-fields.php:82 index.php:61
 #: list.php:34
 msgid "Edit"
 msgstr ""
 
-#: app.php:402 reports.php:128
+#: app.php:464 reports.php:128
 msgid "Download CSV of emails that were not delivered to even after retrying"
 msgstr ""
 
-#: app.php:402 reports.php:128
+#: app.php:464 reports.php:128
 msgid "not delivered"
 msgstr ""
 
-#: app.php:446
+#: app.php:528
 msgid "There are no campaigns yet"
 msgstr ""
 
-#: app.php:446
+#: app.php:528
 msgid "Send one"
 msgstr ""
 
-#: app.php:466
+#: app.php:548
 msgid "Duplicate on which brand?"
 msgstr ""
 
-#: app.php:471
+#: app.php:553
 msgid "Choose a brand you'd like to duplicate this campaign on"
 msgstr ""
 
-#: app.php:502
+#: app.php:584
 msgid "Cancel"
 msgstr ""
 
-#: autoresponders-create.php:47 autoresponders-edit.php:65 create.php:44
-#: edit.php:44
+#: autoresponders-create.php:48 autoresponders-edit.php:66 create.php:45
+#: edit.php:45
 msgid "The subject of your email is required"
 msgstr ""
 
-#: autoresponders-create.php:48 autoresponders-edit.php:66 create.php:45
-#: edit-brand.php:28 edit.php:45 new-brand.php:27
+#: autoresponders-create.php:49 autoresponders-edit.php:67 create.php:46
+#: edit-brand.php:28 edit.php:46 new-brand.php:27
 msgid "'From name' is required"
 msgstr ""
 
-#: autoresponders-create.php:49 autoresponders-edit.php:67 create.php:46
-#: edit-brand.php:29 edit.php:46 new-brand.php:28
+#: autoresponders-create.php:50 autoresponders-edit.php:68 create.php:47
+#: edit-brand.php:29 edit.php:47 new-brand.php:28
 msgid "A valid 'From email' is required"
 msgstr ""
 
-#: autoresponders-create.php:50 autoresponders-edit.php:68 create.php:47
-#: edit-brand.php:30 edit.php:47 new-brand.php:29
+#: autoresponders-create.php:51 autoresponders-edit.php:69 create.php:48
+#: edit-brand.php:30 edit.php:48 new-brand.php:29
 msgid "A valid 'Reply to' email is required"
 msgstr ""
 
-#: autoresponders-create.php:51 autoresponders-edit.php:69 create.php:48
-#: edit.php:48
+#: autoresponders-create.php:52 autoresponders-edit.php:70 create.php:49
+#: edit.php:49
 msgid "Your HTML code is required"
 msgstr ""
 
-#: autoresponders-create.php:52 autoresponders-edit.php:70
+#: autoresponders-create.php:53 autoresponders-edit.php:71
 msgid "Please specify a number"
 msgstr ""
 
-#: autoresponders-create.php:58 autoresponders-create.php:101
-#: autoresponders-edit.php:76 autoresponders-edit.php:153
+#: autoresponders-create.php:59 autoresponders-create.php:102
+#: autoresponders-edit.php:77 autoresponders-edit.php:154
 msgid "immediately"
 msgstr ""
 
-#: autoresponders-create.php:66 autoresponders-create.php:127
-#: autoresponders-edit.php:84 autoresponders-edit.php:216
+#: autoresponders-create.php:67 autoresponders-create.php:128
+#: autoresponders-edit.php:85 autoresponders-edit.php:217
 msgid "on"
 msgstr ""
 
-#: autoresponders-create.php:89 autoresponders-edit.php:107
+#: autoresponders-create.php:90 autoresponders-edit.php:108
 msgid "Create autoresponder email"
 msgstr ""
 
-#: autoresponders-create.php:89 autoresponders-edit.php:107
+#: autoresponders-create.php:90 autoresponders-edit.php:108
 #: autoresponders-emails.php:45 autoresponders-report.php:182
 msgid "For"
 msgstr ""
 
-#: autoresponders-create.php:99 autoresponders-create.php:118
-#: autoresponders-edit.php:151 autoresponders-edit.php:207
+#: autoresponders-create.php:100 autoresponders-create.php:119
+#: autoresponders-edit.php:152 autoresponders-edit.php:208
 msgid "Send email"
 msgstr ""
 
-#: autoresponders-create.php:102 autoresponders-create.php:120
-#: autoresponders-edit.php:128 autoresponders-edit.php:154
-#: autoresponders-edit.php:209
+#: autoresponders-create.php:103 autoresponders-create.php:121
+#: autoresponders-edit.php:129 autoresponders-edit.php:155
+#: autoresponders-edit.php:210
 msgid "minutes"
 msgstr ""
 
-#: autoresponders-create.php:103 autoresponders-create.php:121
-#: autoresponders-edit.php:130 autoresponders-edit.php:155
-#: autoresponders-edit.php:210
+#: autoresponders-create.php:104 autoresponders-create.php:122
+#: autoresponders-edit.php:131 autoresponders-edit.php:156
+#: autoresponders-edit.php:211
 msgid "hours"
 msgstr ""
 
-#: autoresponders-create.php:104 autoresponders-create.php:122
-#: autoresponders-edit.php:132 autoresponders-edit.php:156
-#: autoresponders-edit.php:211
+#: autoresponders-create.php:105 autoresponders-create.php:123
+#: autoresponders-edit.php:133 autoresponders-edit.php:157
+#: autoresponders-edit.php:212
 msgid "days"
 msgstr ""
 
-#: autoresponders-create.php:105 autoresponders-create.php:123
-#: autoresponders-edit.php:134 autoresponders-edit.php:157
-#: autoresponders-edit.php:212
+#: autoresponders-create.php:106 autoresponders-create.php:124
+#: autoresponders-edit.php:135 autoresponders-edit.php:158
+#: autoresponders-edit.php:213
 msgid "weeks"
 msgstr ""
 
-#: autoresponders-create.php:106 autoresponders-create.php:124
-#: autoresponders-edit.php:136 autoresponders-edit.php:158
-#: autoresponders-edit.php:213
+#: autoresponders-create.php:107 autoresponders-create.php:125
+#: autoresponders-edit.php:137 autoresponders-edit.php:159
+#: autoresponders-edit.php:214
 msgid "months"
 msgstr ""
 
-#: autoresponders-create.php:109 autoresponders-edit.php:161
+#: autoresponders-create.php:110 autoresponders-edit.php:162
 msgid "after they subscribe"
 msgstr ""
 
-#: autoresponders-create.php:128 autoresponders-edit.php:217
+#: autoresponders-create.php:129 autoresponders-edit.php:218
 #: autoresponders-emails.php:127 autoresponders-emails.php:131
 msgid "before"
 msgstr ""
 
-#: autoresponders-create.php:129 autoresponders-edit.php:218
+#: autoresponders-create.php:130 autoresponders-edit.php:219
 #: autoresponders-emails.php:115 autoresponders-emails.php:119
 msgid "after"
 msgstr ""
 
-#: autoresponders-create.php:131 autoresponders-edit.php:220
+#: autoresponders-create.php:132 autoresponders-edit.php:221
 msgid "each subscriber's"
 msgstr ""
 
-#: autoresponders-create.php:146 autoresponders-edit.php:235 create.php:69
-#: edit.php:73 send-to.php:447
+#: autoresponders-create.php:147 autoresponders-edit.php:236 create.php:70
+#: edit.php:74 send-to.php:447
 msgid "Subject"
 msgstr ""
 
-#: autoresponders-create.php:149 autoresponders-edit.php:238 create.php:72
-#: edit.php:76
+#: autoresponders-create.php:150 autoresponders-edit.php:239 create.php:73
+#: edit.php:77
 msgid "Subject of this email"
 msgstr ""
 
-#: autoresponders-create.php:153 autoresponders-create.php:156
-#: autoresponders-edit.php:242 autoresponders-edit.php:245 create.php:76
-#: create.php:79 edit-brand.php:84 edit-brand.php:87 edit.php:80 edit.php:83
-#: new-brand.php:83 new-brand.php:86 settings.php:185 settings.php:188
+#: autoresponders-create.php:154 autoresponders-create.php:157
+#: autoresponders-edit.php:243 autoresponders-edit.php:246 create.php:77
+#: create.php:80 edit-brand.php:101 edit-brand.php:104 edit.php:81 edit.php:84
+#: new-brand.php:100 new-brand.php:103 settings.php:208 settings.php:211
 msgid "From name"
 msgstr ""
 
-#: autoresponders-create.php:160 autoresponders-create.php:163
-#: autoresponders-edit.php:249 autoresponders-edit.php:252 create.php:83
-#: create.php:86 edit-brand.php:91 edit-brand.php:94 edit.php:87 edit.php:90
-#: new-brand.php:90 new-brand.php:93 new-brand.php:198 settings.php:192
-#: settings.php:195
+#: autoresponders-create.php:161 autoresponders-create.php:164
+#: autoresponders-edit.php:250 autoresponders-edit.php:253 create.php:84
+#: create.php:87 edit-brand.php:108 edit-brand.php:111 edit.php:88 edit.php:91
+#: new-brand.php:107 new-brand.php:110 settings.php:215 settings.php:218
 msgid "From email"
 msgstr ""
 
-#: autoresponders-create.php:167 autoresponders-create.php:170
-#: autoresponders-edit.php:256 autoresponders-edit.php:259 create.php:90
-#: create.php:93 edit-brand.php:161 edit-brand.php:164 edit.php:94 edit.php:97
-#: new-brand.php:134 new-brand.php:137 settings.php:199 settings.php:202
+#: autoresponders-create.php:168 autoresponders-create.php:171
+#: autoresponders-edit.php:257 autoresponders-edit.php:260 create.php:91
+#: create.php:94 edit-brand.php:178 edit-brand.php:181 edit.php:95 edit.php:98
+#: new-brand.php:151 new-brand.php:154 settings.php:222 settings.php:225
 msgid "Reply to email"
 msgstr ""
 
-#: autoresponders-create.php:174 autoresponders-edit.php:263 create.php:97
-#: edit.php:101
+#: autoresponders-create.php:175 autoresponders-edit.php:264 create.php:98
+#: edit.php:102
 msgid "Plain text"
 msgstr ""
 
-#: autoresponders-create.php:177 autoresponders-edit.php:266 create.php:100
-#: edit.php:104
+#: autoresponders-create.php:178 autoresponders-edit.php:267 create.php:101
+#: edit.php:105
 msgid "Plain text of this email"
 msgstr ""
 
-#: autoresponders-create.php:181 autoresponders-edit.php:270 create.php:104
-#: edit.php:108
+#: autoresponders-create.php:182 autoresponders-edit.php:271 create.php:105
+#: edit.php:109
 msgid "Attachments"
 msgstr ""
 
-#: autoresponders-create.php:191 autoresponders-edit.php:337
+#: autoresponders-create.php:192 autoresponders-edit.php:338
 msgid "Save autoresponder email"
 msgstr ""
 
-#: autoresponders-create.php:193 autoresponders-emails.php:221
+#: autoresponders-create.php:194 autoresponders-emails.php:221
 msgid "Back to autoresponders list"
 msgstr ""
 
-#: autoresponders-create.php:198 autoresponders-edit.php:342 create.php:116
-#: edit.php:179
+#: autoresponders-create.php:199 autoresponders-edit.php:343 create.php:117
+#: edit.php:180
 msgid "HTML code"
 msgstr ""
 
-#: autoresponders-create.php:200 autoresponders-edit.php:345 create.php:118
-#: edit.php:182 includes/ares/toggle-wysiwyg.php:8
+#: autoresponders-create.php:201 autoresponders-edit.php:346 create.php:119
+#: edit.php:183 includes/ares/toggle-wysiwyg.php:8
 #: includes/create/toggle-wysiwyg.php:9
 msgid "Save and switch to HTML editor"
 msgstr ""
 
-#: autoresponders-create.php:201 autoresponders-edit.php:29 create.php:119
-#: edit.php:11
+#: autoresponders-create.php:202 autoresponders-edit.php:30 create.php:120
+#: edit.php:12
 msgid ""
 "Switch to HTML editor if the WYSIWYG editor is causing your newsletter to "
 "look weird."
 msgstr ""
 
-#: autoresponders-create.php:222 autoresponders-edit.php:362 edit.php:199
+#: autoresponders-create.php:223 autoresponders-edit.php:363 edit.php:200
 msgid "Untitled"
 msgstr ""
 
-#: autoresponders-create.php:234 autoresponders-edit.php:385 create.php:152
-#: edit.php:222
+#: autoresponders-create.php:235 autoresponders-edit.php:386 create.php:153
+#: edit.php:223
 msgid ""
 "Use the following tags in your subject, plain text or HTML code and they'll "
 "automatically be formatted when your campaign is sent. For web version and "
 "unsubscribe tags, you can style them with inline CSS."
 msgstr ""
 
-#: autoresponders-create.php:237 autoresponders-edit.php:388 create.php:155
-#: edit.php:225
-msgid "Essential tags (HTML only)"
-msgstr ""
-
 #: autoresponders-create.php:238 autoresponders-edit.php:389 create.php:156
 #: edit.php:226
-msgid "The following tags can only be used on the HTML version"
-msgstr ""
-
-#: autoresponders-create.php:239 autoresponders-create.php:244
-#: autoresponders-edit.php:390 autoresponders-edit.php:395 create.php:157
-#: create.php:162 edit.php:227 edit.php:232
-msgid "Webversion link"
+msgid "Essential tags (HTML only)"
 msgstr ""
 
 #: autoresponders-create.php:239 autoresponders-edit.php:390 create.php:157
 #: edit.php:227
-msgid "View web version"
+msgid "The following tags can only be used on the HTML version"
 msgstr ""
 
 #: autoresponders-create.php:240 autoresponders-create.php:245
 #: autoresponders-edit.php:391 autoresponders-edit.php:396 create.php:158
 #: create.php:163 edit.php:228 edit.php:233
-msgid "Unsubscribe link"
+msgid "Webversion link"
 msgstr ""
 
 #: autoresponders-create.php:240 autoresponders-edit.php:391 create.php:158
 #: edit.php:228
+msgid "View web version"
+msgstr ""
+
+#: autoresponders-create.php:241 autoresponders-create.php:246
+#: autoresponders-edit.php:392 autoresponders-edit.php:397 create.php:159
+#: create.php:164 edit.php:229 edit.php:234
+msgid "Unsubscribe link"
+msgstr ""
+
+#: autoresponders-create.php:241 autoresponders-edit.php:392 create.php:159
+#: edit.php:229
 msgid "Unsubscribe here"
 msgstr ""
 
-#: autoresponders-create.php:242 autoresponders-edit.php:393 create.php:160
-#: edit.php:230
+#: autoresponders-create.php:243 autoresponders-edit.php:394 create.php:161
+#: edit.php:231
 msgid "Essential tags"
 msgstr ""
 
-#: autoresponders-create.php:243 autoresponders-create.php:250
-#: autoresponders-edit.php:394 autoresponders-edit.php:401 create.php:161
-#: create.php:168 edit.php:231 edit.php:238
+#: autoresponders-create.php:244 autoresponders-create.php:251
+#: autoresponders-edit.php:395 autoresponders-edit.php:402 create.php:162
+#: create.php:169 edit.php:232 edit.php:239
 msgid "The following tags can be used on both Plain text or HTML version"
 msgstr ""
 
-#: autoresponders-create.php:249 autoresponders-edit.php:400 create.php:167
-#: edit.php:237
+#: autoresponders-create.php:250 autoresponders-edit.php:401 create.php:168
+#: edit.php:238
 msgid "Personalization tags"
 msgstr ""
 
-#: autoresponders-create.php:251 autoresponders-edit.php:402
+#: autoresponders-create.php:252 autoresponders-edit.php:403
 #: autoresponders-report.php:296 autoresponders-report.php:418
-#: autoresponders-report.php:500 autoresponders-report.php:581 create.php:169
-#: custom-fields.php:88 edit.php:239 report.php:327 report.php:449
-#: report.php:531 report.php:616 settings.php:104 subscribers.php:240
+#: autoresponders-report.php:500 autoresponders-report.php:581 create.php:170
+#: custom-fields.php:88 edit.php:240 report.php:327 report.php:449
+#: report.php:531 report.php:616 settings.php:105 subscribers.php:248
 #: update-list.php:75 includes/subscribers/subscriber-info.php:57
 msgid "Name"
 msgstr ""
 
-#: autoresponders-create.php:252 autoresponders-edit.php:403
+#: autoresponders-create.php:253 autoresponders-edit.php:404
 #: autoresponders-emails.php:61 autoresponders-report.php:297
 #: autoresponders-report.php:419 autoresponders-report.php:501
-#: autoresponders-report.php:582 create.php:170 custom-fields.php:95
-#: edit.php:240 login.php:40 report.php:328 report.php:450 report.php:532
-#: report.php:617 settings.php:111 subscribers.php:241 update-list.php:76
+#: autoresponders-report.php:582 create.php:171 custom-fields.php:95
+#: edit.php:241 login.php:40 report.php:328 report.php:450 report.php:532
+#: report.php:617 settings.php:112 subscribers.php:249 update-list.php:76
 #: includes/subscribers/subscriber-info.php:106
 msgid "Email"
 msgstr ""
 
-#: autoresponders-create.php:254 autoresponders-edit.php:405 create.php:172
-#: edit.php:242
-msgid "Custom field tags"
-msgstr ""
-
 #: autoresponders-create.php:255 autoresponders-edit.php:406 create.php:173
 #: edit.php:243
-msgid "You can also use custom fields to personalize your newsletter, eg."
+msgid "Custom field tags"
 msgstr ""
 
 #: autoresponders-create.php:256 autoresponders-edit.php:407 create.php:174
 #: edit.php:244
+msgid "You can also use custom fields to personalize your newsletter, eg."
+msgstr ""
+
+#: autoresponders-create.php:257 autoresponders-edit.php:408 create.php:175
+#: edit.php:245
 msgid ""
 "To manage or get a reference of tags from custom fields, go to any "
 "subscriber list. Then click 'Custom fields' button at the top right."
 msgstr ""
 
-#: autoresponders-edit.php:34 edit.php:16
+#: autoresponders-edit.php:35 edit.php:17
 msgid "Switch to the WYSIWYG editor to use formatting tools."
 msgstr ""
 
-#: autoresponders-edit.php:347 edit.php:184
+#: autoresponders-edit.php:348 edit.php:185
 msgid "Save and switch to WYSIWYG editor"
 msgstr ""
 
-#: autoresponders-edit.php:372 edit.php:209
+#: autoresponders-edit.php:373 edit.php:210
 msgid "Sorry, unable to toggle. Please try again later!"
 msgstr ""
 
-#: autoresponders-edit.php:382 edit.php:219
+#: autoresponders-edit.php:383 edit.php:220
 msgid "Email content"
 msgstr ""
 
@@ -567,7 +566,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: autoresponders-emails.php:176 scheduled.php:662 scheduled.php:680
+#: autoresponders-emails.php:176 scheduled.php:664 scheduled.php:682
 #: includes/create/send-now.php:611 includes/create/send-now.php:629
 msgid "View report"
 msgstr ""
@@ -666,7 +665,7 @@ msgid ""
 "off reminders."
 msgstr ""
 
-#: autoresponders-list.php:271 create.php:111 edit.php:173
+#: autoresponders-list.php:271 create.php:112 edit.php:174
 msgid "Save & next"
 msgstr ""
 
@@ -712,22 +711,22 @@ msgstr ""
 
 #: autoresponders-report.php:137 autoresponders-report.php:356
 #: autoresponders-report.php:622 report.php:152 report.php:387 report.php:657
-#: subscribers.php:208 subscribers.php:312
+#: subscribers.php:216 subscribers.php:320
 #: includes/subscribers/subscriber-info.php:31
 msgid "Marked as spam"
 msgstr ""
 
 #: autoresponders-report.php:141 autoresponders-report.php:354
 #: autoresponders-report.php:541 list.php:33 report.php:157 report.php:385
-#: report.php:572 subscribers.php:207 subscribers.php:310
+#: report.php:572 subscribers.php:215 subscribers.php:318
 #: includes/subscribers/subscriber-info.php:29
 msgid "Bounced"
 msgstr ""
 
 #: autoresponders-report.php:145 autoresponders-report.php:352
 #: autoresponders-report.php:460 list.php:32 report.php:162 report.php:383
-#: report.php:491 subscribers.php:206 subscribers.php:308 subscribers.php:388
-#: unsubscribe.php:273 includes/subscribers/subscriber-info.php:27
+#: report.php:491 subscribers.php:214 subscribers.php:316 subscribers.php:396
+#: unsubscribe.php:274 includes/subscribers/subscriber-info.php:27
 msgid "Unsubscribed"
 msgstr ""
 
@@ -821,7 +820,7 @@ msgstr ""
 
 #: autoresponders-report.php:299 autoresponders-report.php:421
 #: autoresponders-report.php:503 autoresponders-report.php:584 report.php:330
-#: report.php:452 report.php:534 report.php:619 subscribers.php:243
+#: report.php:452 report.php:534 report.php:619 subscribers.php:251
 #: includes/subscribers/subscriber-info.php:258
 msgid "Status"
 msgstr ""
@@ -831,15 +830,15 @@ msgstr ""
 msgid "No one opened yet."
 msgstr ""
 
-#: autoresponders-report.php:350 report.php:381 subscribe.php:459
-#: subscribers.php:306 subscribers.php:384 subscribers.php:394
-#: subscribers.php:400 includes/subscribers/subscriber-info.php:25
+#: autoresponders-report.php:350 report.php:381 subscribe.php:460
+#: subscribers.php:314 subscribers.php:392 subscribers.php:402
+#: subscribers.php:408 includes/subscribers/subscriber-info.php:25
 msgid "Subscribed"
 msgstr ""
 
 #: autoresponders-report.php:359 autoresponders-report.php:442
 #: autoresponders-report.php:523 report.php:390 report.php:473 report.php:554
-#: report.php:639 subscribers.php:317
+#: report.php:639 subscribers.php:325
 msgid "No name"
 msgstr ""
 
@@ -921,38 +920,38 @@ msgstr ""
 msgid "No countries detected yet."
 msgstr ""
 
-#: autoresponders-report.php:833 report.php:872 subscribers.php:442
+#: autoresponders-report.php:833 report.php:872 subscribers.php:450
 msgid "Subscriber info"
 msgstr ""
 
 #: autoresponders-report.php:839 custom-fields.php:186 report.php:878
-#: subscribers.php:448
+#: subscribers.php:456
 msgid "Close"
 msgstr ""
 
-#: autoresponders-report.php:845 report.php:884 subscribers.php:454
+#: autoresponders-report.php:845 report.php:884 subscribers.php:462
 msgid "Fetching"
 msgstr ""
 
-#: autoresponders-report.php:855 report.php:894 subscribers.php:464
+#: autoresponders-report.php:855 report.php:894 subscribers.php:472
 msgid ""
 "Oops, there was an error getting the subscriber's info. Please try again "
 "later."
 msgstr ""
 
-#: campaigns-rss.php:21 confirm.php:21 l.php:19 payment.php:20 sending.php:20
-#: subscribe.php:21 unsubscribe.php:21 w.php:20 api/_connect.php:20
-#: includes/functions.php:26
+#: campaigns-rss.php:22 confirm.php:22 l.php:20 payment.php:21 sending.php:21
+#: subscribe.php:22 unsubscribe.php:22 w.php:21 api/_connect.php:21
+#: includes/functions.php:27
 msgid "Can't connect to database"
 msgstr ""
 
-#: campaigns-rss.php:21 confirm.php:21 l.php:19 payment.php:20 sending.php:20
-#: subscribe.php:21 unsubscribe.php:21 w.php:20 api/_connect.php:20
-#: includes/functions.php:26
+#: campaigns-rss.php:22 confirm.php:22 l.php:20 payment.php:21 sending.php:21
+#: subscribe.php:22 unsubscribe.php:22 w.php:21 api/_connect.php:21
+#: includes/functions.php:27
 msgid "There is a problem connecting to the database. Please try again later."
 msgstr ""
 
-#: campaigns-rss.php:80
+#: campaigns-rss.php:81
 msgid "Campaigns RSS"
 msgstr ""
 
@@ -982,11 +981,11 @@ msgstr ""
 msgid "Yes, clear the queue table"
 msgstr ""
 
-#: confirm.php:161 confirm.php:199 subscribe.php:259 subscribe.php:296
+#: confirm.php:162 confirm.php:200 subscribe.php:260 subscribe.php:297
 msgid "You're subscribed!"
 msgstr ""
 
-#: create.php:63 includes/sidebar.php:5
+#: create.php:64 includes/sidebar.php:5
 msgid "Create new campaign"
 msgstr ""
 
@@ -1050,8 +1049,8 @@ msgstr ""
 msgid "Edit custom field"
 msgstr ""
 
-#: custom-fields.php:187 edit-brand.php:219 edit-brand.php:331
-#: edit-list.php:256 new-brand.php:187 new-brand.php:279 settings.php:211
+#: custom-fields.php:187 edit-brand.php:236 edit-brand.php:349
+#: edit-list.php:257 new-brand.php:204 new-brand.php:297 settings.php:234
 msgid "Save"
 msgstr ""
 
@@ -1099,109 +1098,135 @@ msgstr ""
 msgid "Please specify your brand's name"
 msgstr ""
 
-#: edit-brand.php:40 index.php:12 new-brand.php:39 settings.php:40
+#: edit-brand.php:51 index.php:12 new-brand.php:50 settings.php:40
 msgid "Amazon SES Quota"
 msgstr ""
 
-#: edit-brand.php:57 index.php:29 new-brand.php:56 settings.php:57
+#: edit-brand.php:68 index.php:29 new-brand.php:67 settings.php:57
 msgid "Amazon SES is not set up as we can't find your AWS credentials in"
 msgstr ""
 
-#: edit-brand.php:57 index.php:29 new-brand.php:56 settings.php:57
+#: edit-brand.php:68 index.php:29 new-brand.php:67 settings.php:57
 msgid "settings"
 msgstr ""
 
-#: edit-brand.php:58 index.php:30 new-brand.php:57 settings.php:58
+#: edit-brand.php:69 index.php:30 new-brand.php:68 settings.php:58
 msgid ""
 "If you entered SMTP credentials when you create or edit a brand, emails will "
 "be sent via SMTP. Otherwise, emails will be sent via your server (not "
 "recommended)."
 msgstr ""
 
-#: edit-brand.php:59 index.php:31 new-brand.php:58 settings.php:59
+#: edit-brand.php:70 index.php:31 new-brand.php:69 settings.php:59
 msgid "View Get Started guide"
 msgstr ""
 
-#: edit-brand.php:61 index.php:33 new-brand.php:60 settings.php:61
+#: edit-brand.php:72 index.php:33 new-brand.php:71 settings.php:61
+msgid "SES Region"
+msgstr ""
+
+#: edit-brand.php:73 index.php:34 new-brand.php:72 settings.php:62
 msgid "Max send in 24hrs"
 msgstr ""
 
-#: edit-brand.php:62 index.php:34 new-brand.php:61 settings.php:62
+#: edit-brand.php:74 index.php:35 new-brand.php:73 settings.php:63
 msgid "Max send rate"
 msgstr ""
 
-#: edit-brand.php:62 index.php:34 new-brand.php:61 settings.php:62
+#: edit-brand.php:74 index.php:35 new-brand.php:73 settings.php:63
 msgid "per sec"
 msgstr ""
 
-#: edit-brand.php:63 index.php:35 new-brand.php:62 settings.php:63
+#: edit-brand.php:75 index.php:36 new-brand.php:74 settings.php:64
 msgid "Sent last 24hrs"
 msgstr ""
 
-#: edit-brand.php:64 index.php:36 new-brand.php:63 settings.php:64
+#: edit-brand.php:76 index.php:37 new-brand.php:75 settings.php:65
 msgid "Sends left"
 msgstr ""
 
-#: edit-brand.php:68 index.php:40 new-brand.php:67 settings.php:68
+#: edit-brand.php:80 index.php:41 new-brand.php:79 settings.php:69
 msgid ""
 "Unable to get your SES quota from Amazon. Verify that your AWS credentials "
 "are correct. If you're certain they're correct and are still seeing zeros in "
 "your quota, there are 3 possibilities:"
 msgstr ""
 
-#: edit-brand.php:68 index.php:40 new-brand.php:67 settings.php:68
+#: edit-brand.php:80 index.php:41 new-brand.php:79 settings.php:69
 msgid ""
 "You did not attach user policy to your IAM credentials. See Step 5.5 and 5.6 "
 "of the <a href=\"http://sendy.co/get-started\" target=\"_blank\">Get Started "
 "Guide</a>"
 msgstr ""
 
-#: edit-brand.php:68 index.php:40 new-brand.php:67 settings.php:68
+#: edit-brand.php:80 index.php:41 new-brand.php:79 settings.php:69
 msgid ""
 "Your server clock is out of sync. To fix this, Amazon requires you to "
 "<strong>sync your server clock with NTP</strong>. Request your host to do so "
 "if you're unsure."
 msgstr ""
 
-#: edit-brand.php:68 index.php:40 new-brand.php:67 settings.php:68
+#: edit-brand.php:80 index.php:41 new-brand.php:79 settings.php:69
 msgid ""
 "Your Amazon SES account may have been suspended by Amazon. Check if you've "
 "received an email from Amazon (do check your spam folder as well)."
 msgstr ""
 
-#: edit-brand.php:75
+#: edit-brand.php:84 index.php:45 new-brand.php:83 settings.php:73
+msgid "You're currently in Amazon SES's \"Sandbox mode\"."
+msgstr ""
+
+#: edit-brand.php:84 index.php:45 new-brand.php:83 settings.php:73
+msgid ""
+"Please request Amazon for \"<a href=\"http://aws.amazon.com/ses/"
+"fullaccessrequest/\" target=\"_blank\">production access</a>\" to be able to "
+"send to and from any email address as well as raise your sending limits from "
+"200 to 10,000 emails per day."
+msgstr ""
+
+#: edit-brand.php:84 index.php:45 new-brand.php:83 send-to.php:276
+#: settings.php:73
+msgid ""
+"Please also make sure to request production access in the same region as "
+"what is set in your main Settings."
+msgstr ""
+
+#: edit-brand.php:92
 msgid "Edit brand"
 msgstr ""
 
-#: edit-brand.php:77 new-brand.php:76
+#: edit-brand.php:94 new-brand.php:93
 msgid "Brand name"
 msgstr ""
 
-#: edit-brand.php:80 new-brand.php:79
+#: edit-brand.php:97 new-brand.php:96
 msgid "The name of the brand you're sending from"
 msgstr ""
 
-#: edit-brand.php:96 new-brand.php:95
+#: edit-brand.php:113 new-brand.php:112
 msgid "Checking if your 'From email' is verified in your SES console.."
 msgstr ""
 
-#: edit-brand.php:97 new-brand.php:96 send-to.php:111
+#: edit-brand.php:114 new-brand.php:113 send-to.php:111
 msgid "Unverified 'From email'"
 msgstr ""
 
-#: edit-brand.php:97 new-brand.php:96
-msgid "See Step 6 of our Get Started Guide on how to verify"
+#: edit-brand.php:114 new-brand.php:113 send-to.php:112
+msgid ""
+"Your 'From email', (or its domain) is either not verified in your Amazon SES "
+"console or it is not verified in the same region as what is set in your main "
+"Settings. Please follow very closely Step 6 of our Get Started Guide"
 msgstr ""
 
-#: edit-brand.php:98 new-brand.php:97
+#: edit-brand.php:115 new-brand.php:114
 msgid "Congrats! This 'From email' is verified."
 msgstr ""
 
-#: edit-brand.php:172 new-brand.php:143
+#: edit-brand.php:189 new-brand.php:160
 msgid "SMTP settings (only if you're not using Amazon SES)"
 msgstr ""
 
-#: edit-brand.php:175 new-brand.php:146
+#: edit-brand.php:192 new-brand.php:163
 msgid ""
 "If you prefer using other email service providers over Amazon SES for "
 "sending emails, set your SMTP settings here. Note that multi-threading is "
@@ -1209,118 +1234,124 @@ msgid ""
 "other email service providers to send emails."
 msgstr ""
 
-#: edit-brand.php:178 new-brand.php:149
+#: edit-brand.php:195 new-brand.php:166
 msgid "Host"
 msgstr ""
 
-#: edit-brand.php:185 new-brand.php:156
+#: edit-brand.php:202 new-brand.php:173
 msgid "Port"
 msgstr ""
 
-#: edit-brand.php:205 new-brand.php:173
+#: edit-brand.php:222 new-brand.php:190
 msgid "Username"
 msgstr ""
 
-#: edit-brand.php:208 new-brand.php:176
+#: edit-brand.php:225 new-brand.php:193
 msgid "Username (usually your email)"
 msgstr ""
 
-#: edit-brand.php:212 edit-brand.php:232 login.php:41 new-brand.php:180
-#: new-brand.php:199 includes/login/forgot.php:39 includes/login/forgot.php:46
+#: edit-brand.php:229 edit-brand.php:250 login.php:41 new-brand.php:197
+#: new-brand.php:217 includes/login/forgot.php:39 includes/login/forgot.php:46
 msgid "Password"
 msgstr ""
 
-#: edit-brand.php:215
+#: edit-brand.php:232
 msgid "Leave blank to not change it"
 msgstr ""
 
-#: edit-brand.php:226
+#: edit-brand.php:243
 msgid ""
 "If this brand is one of your client, you can allow them to send newsletters "
 "on their own at a fee you preset below. Generate a new password below so "
 "that they can login with it."
 msgstr ""
 
-#: edit-brand.php:226 new-brand.php:193
+#: edit-brand.php:243 new-brand.php:210
 msgid "Also, don't forget to set your PayPal account email address in"
 msgstr ""
 
-#: edit-brand.php:226 new-brand.php:193 settings.php:78 includes/header.php:53
+#: edit-brand.php:243 new-brand.php:210 settings.php:84 includes/header.php:53
 msgid "Settings"
 msgstr ""
 
-#: edit-brand.php:229 new-brand.php:193 new-brand.php:196
+#: edit-brand.php:246 new-brand.php:210 new-brand.php:213
 msgid "Client login details"
 msgstr ""
 
-#: edit-brand.php:230 new-brand.php:197
+#: edit-brand.php:247 new-brand.php:214
 msgid "Login URL"
 msgstr ""
 
-#: edit-brand.php:231 new-brand.php:198
+#: edit-brand.php:248 new-brand.php:215
 msgid "Login email"
 msgstr ""
 
-#: edit-brand.php:232
+#: edit-brand.php:249 new-brand.php:216
+msgid ""
+"This login email is already in use by your main login email address set in "
+"your main Settings. Please use another email address."
+msgstr ""
+
+#: edit-brand.php:250
 msgid "Generate new password"
 msgstr ""
 
-#: edit-brand.php:247 new-brand.php:203
+#: edit-brand.php:265 new-brand.php:221
 msgid "Language"
 msgstr ""
 
-#: edit-brand.php:273 new-brand.php:230
+#: edit-brand.php:291 new-brand.php:248
 msgid "Currency"
 msgstr ""
 
-#: edit-brand.php:313 new-brand.php:261 send-to.php:249
+#: edit-brand.php:331 new-brand.php:279 send-to.php:249
 msgid "Delivery Fee"
 msgstr ""
 
-#: edit-brand.php:322 new-brand.php:270
+#: edit-brand.php:340 new-brand.php:288
 msgid "Cost per recipient"
 msgstr ""
 
-#: edit-list.php:23
+#: edit-list.php:24
 msgid "Edit list"
 msgstr ""
 
-#: edit-list.php:31 new-list.php:33
+#: edit-list.php:32 new-list.php:33
 msgid "List name"
 msgstr ""
 
-#: edit-list.php:34
+#: edit-list.php:35
 msgid "The list name"
 msgstr ""
 
-#: edit-list.php:46
+#: edit-list.php:47
 msgid "Subscribe settings"
 msgstr ""
 
-#: edit-list.php:53
+#: edit-list.php:54
 msgid "List type"
 msgstr ""
 
-#: edit-list.php:55
+#: edit-list.php:56
 msgid ""
 "If you select double opt-in, users will be required to click a link in a "
 "confirmation email they'll receive when they sign up via the subscribe form "
 "or API."
 msgstr ""
 
-#: edit-list.php:58
+#: edit-list.php:59
 msgid "Single Opt-In"
 msgstr ""
 
-#: edit-list.php:59
+#: edit-list.php:60
 msgid "Double Opt-In"
 msgstr ""
 
-#: edit-list.php:85
+#: edit-list.php:86
 msgid "Subscribe success page"
 msgstr ""
 
-#: edit-list.php:87
+#: edit-list.php:88
 msgid ""
 "When users subscribe through the subscribe form, they'll be sent to a "
 "generic subscription confirmation page. To redirect users to a page of your "
@@ -1328,145 +1359,145 @@ msgid ""
 "Type, this page will tell them a confirmation email has been sent to them."
 msgstr ""
 
-#: edit-list.php:88 edit-list.php:99 edit-list.php:205
+#: edit-list.php:89 edit-list.php:100 edit-list.php:206
 msgid "Page URL"
 msgstr ""
 
-#: edit-list.php:96
+#: edit-list.php:97
 msgid "Subscription confirmed page"
 msgstr ""
 
-#: edit-list.php:96 edit-list.php:138 edit-list.php:145
+#: edit-list.php:97 edit-list.php:139 edit-list.php:146
 msgid "only applies for double opt-ins"
 msgstr ""
 
-#: edit-list.php:98
+#: edit-list.php:99
 msgid ""
 "If your List Type is double opt-in, users who clicked the confirmation URL "
 "will be sent to a generic confirmation page. To redirect users to a page of "
 "your preference, enter the link below."
 msgstr ""
 
-#: edit-list.php:115
+#: edit-list.php:116
 msgid ""
 "Send user a thank you email after they subscribe through the subscribe form "
 "or API?"
 msgstr ""
 
-#: edit-list.php:120
+#: edit-list.php:121
 msgid "Thank you email subject"
 msgstr ""
 
-#: edit-list.php:123 edit-list.php:229
+#: edit-list.php:124 edit-list.php:230
 msgid "Email subject"
 msgstr ""
 
-#: edit-list.php:127
+#: edit-list.php:128
 msgid "Thank you email message"
 msgstr ""
 
-#: edit-list.php:130 edit-list.php:148 edit-list.php:236
+#: edit-list.php:131 edit-list.php:149 edit-list.php:237
 msgid "Email message"
 msgstr ""
 
-#: edit-list.php:138
+#: edit-list.php:139
 msgid "Confirmation email subject"
 msgstr ""
 
-#: edit-list.php:138
+#: edit-list.php:139
 msgid "A generic subject line will be used if you leave this field empty."
 msgstr ""
 
-#: edit-list.php:141
+#: edit-list.php:142
 msgid "Subject of confirmation email"
 msgstr ""
 
-#: edit-list.php:145
+#: edit-list.php:146
 msgid "Double Opt-In confirmation message"
 msgstr ""
 
-#: edit-list.php:145
+#: edit-list.php:146
 msgid "A generic email message will be used if you leave this field empty."
 msgstr ""
 
-#: edit-list.php:145
+#: edit-list.php:146
 msgid "Don't forget to include the confirmation link tag"
 msgstr ""
 
-#: edit-list.php:145
+#: edit-list.php:146
 msgid "somewhere in your message"
 msgstr ""
 
-#: edit-list.php:163
+#: edit-list.php:164
 msgid "Unsubscribe settings"
 msgstr ""
 
-#: edit-list.php:170
+#: edit-list.php:171
 msgid "Unsubscribe user"
 msgstr ""
 
-#: edit-list.php:172
+#: edit-list.php:173
 msgid ""
 "When a user unsubscribes from a newsletter or through the API, choose "
 "whether to unsubscribe them from this list only, or unsubscribe them from "
 "all lists in this brand."
 msgstr ""
 
-#: edit-list.php:175
+#: edit-list.php:176
 msgid "Only this list"
 msgstr ""
 
-#: edit-list.php:176
+#: edit-list.php:177
 msgid "All lists"
 msgstr ""
 
-#: edit-list.php:202
+#: edit-list.php:203
 msgid "Unsubscribe confirmation page"
 msgstr ""
 
-#: edit-list.php:204
+#: edit-list.php:205
 msgid ""
 "When users unsubscribe from a newsletter, they'll be sent to a generic "
 "unsubscription confirmation page. To redirect users to a page of your "
 "preference, enter the link below."
 msgstr ""
 
-#: edit-list.php:221
+#: edit-list.php:222
 msgid ""
 "Send user a confirmation email after they unsubscribe from a newsletter or "
 "through the API?"
 msgstr ""
 
-#: edit-list.php:226
+#: edit-list.php:227
 msgid "Goodbye email subject"
 msgstr ""
 
-#: edit-list.php:233
+#: edit-list.php:234
 msgid "Goodbye email message"
 msgstr ""
 
-#: edit.php:65
+#: edit.php:66
 msgid "Edit campaign"
 msgstr ""
 
-#: index.php:47
+#: index.php:53
 msgid "Select a brand"
 msgstr ""
 
-#: index.php:49 includes/header.php:103
+#: index.php:55 includes/header.php:103
 msgid "Add a new brand"
 msgstr ""
 
-#: index.php:54 includes/header.php:79
+#: index.php:60 includes/header.php:79
 msgid "Brands"
 msgstr ""
 
-#: index.php:80
+#: index.php:86
 msgid ""
 "All campaigns, lists, subscribers will be permanently deleted. Confirm delete"
 msgstr ""
 
-#: index.php:105
+#: index.php:111
 msgid "Add your first brand!"
 msgstr ""
 
@@ -1482,7 +1513,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: list.php:31 subscribers.php:204
+#: list.php:31 subscribers.php:212
 msgid "Active"
 msgstr ""
 
@@ -1532,40 +1563,32 @@ msgstr ""
 msgid "Sorry, unable to reset password. Please try again later!"
 msgstr ""
 
-#: new-brand.php:74
+#: new-brand.php:91
 msgid "New brand"
 msgstr ""
 
-#: new-brand.php:183 settings.php:121
+#: new-brand.php:200 settings.php:126
 msgid "Your password"
 msgstr ""
 
-#: new-brand.php:191
+#: new-brand.php:208
 msgid "Brand settings"
 msgstr ""
 
-#: new-brand.php:193
+#: new-brand.php:210
 msgid ""
 "If you're creating this brand for your client, you can allow them to send "
 "newsletters on their own at a fee you preset below."
 msgstr ""
 
-#: new-brand.php:193
+#: new-brand.php:210
 msgid "Send the"
 msgstr ""
 
-#: new-brand.php:193
+#: new-brand.php:210
 msgid ""
 "to your client so that they can login to manage lists, subscribers and send "
 "newsletters."
-msgstr ""
-
-#: new-brand.php:198
-msgid "Not set yet"
-msgstr ""
-
-#: new-brand.php:198
-msgid "uses"
 msgstr ""
 
 #: new-list.php:16
@@ -1580,19 +1603,19 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: payment.php:106
+#: payment.php:107
 msgid "Sending you to PayPal"
 msgstr ""
 
-#: payment.php:112
+#: payment.php:113
 msgid "Sending you to PayPal, one moment please"
 msgstr ""
 
-#: payment.php:117
+#: payment.php:118
 msgid "Campaign for"
 msgstr ""
 
-#: payment.php:129
+#: payment.php:130
 msgid "Click here to proceed"
 msgstr ""
 
@@ -1712,20 +1735,20 @@ msgstr ""
 msgid "Yes, reset cron setup"
 msgstr ""
 
-#: scheduled.php:654 includes/create/send-now.php:605
+#: scheduled.php:656 includes/create/send-now.php:605
 msgid "Campaign sent"
 msgstr ""
 
-#: scheduled.php:660 scheduled.php:676 includes/create/send-now.php:609
+#: scheduled.php:662 scheduled.php:678 includes/create/send-now.php:609
 #: includes/create/send-now.php:625
 msgid "Your campaign has been successfully sent to"
 msgstr ""
 
-#: scheduled.php:673 includes/create/send-now.php:622
+#: scheduled.php:675 includes/create/send-now.php:622
 msgid "Your campaign has been sent"
 msgstr ""
 
-#: scheduled.php:678 includes/create/send-now.php:627
+#: scheduled.php:680 includes/create/send-now.php:627
 #: includes/subscribers/subscriber-info.php:266
 msgid "Campaign"
 msgstr ""
@@ -1740,13 +1763,6 @@ msgstr ""
 
 #: send-to.php:81 js/create/main.php:109
 msgid "Schedule this campaign?"
-msgstr ""
-
-#: send-to.php:112
-msgid ""
-"Your 'from email', (or its domain) is not verified in your SES console, your "
-"emails cannot be sent. Please see Step 6 of our Get Started Guide on how to "
-"verify"
 msgstr ""
 
 #: send-to.php:137
@@ -1898,15 +1914,15 @@ msgstr ""
 msgid "To schedule campaigns or to make sending more reliable, add a"
 msgstr ""
 
-#: send-to.php:325 subscribers.php:483 update-list.php:182
+#: send-to.php:325 subscribers.php:491 update-list.php:182
 msgid "cron job"
 msgstr ""
 
-#: send-to.php:325 subscribers.php:483 update-list.php:182
+#: send-to.php:325 subscribers.php:491 update-list.php:182
 msgid "with the following command."
 msgstr ""
 
-#: send-to.php:326 subscribers.php:484 update-list.php:183
+#: send-to.php:326 subscribers.php:492 update-list.php:183
 msgid "Command"
 msgstr ""
 
@@ -1924,7 +1940,7 @@ msgid ""
 "unsure.)"
 msgstr ""
 
-#: send-to.php:329 subscribers.php:487 update-list.php:186
+#: send-to.php:329 subscribers.php:495 update-list.php:186
 msgid "Cron job"
 msgstr ""
 
@@ -2039,23 +2055,23 @@ msgstr ""
 msgid "Send anyway"
 msgstr ""
 
-#: sending.php:75 sending.php:119
+#: sending.php:76 sending.php:120
 msgid "Your campaign has been scheduled"
 msgstr ""
 
-#: sending.php:121
+#: sending.php:122
 msgid "You will be notified by email once your campaign has been sent."
 msgstr ""
 
-#: sending.php:135
+#: sending.php:136
 msgid "Now sending"
 msgstr ""
 
-#: sending.php:199
+#: sending.php:200
 msgid "Your campaign is on the way!"
 msgstr ""
 
-#: sending.php:201
+#: sending.php:202
 msgid ""
 "You can close this window and your campaign will continue to send. You will "
 "be notified by email once your campaign has completed sending."
@@ -2073,67 +2089,85 @@ msgstr ""
 msgid "A valid email is required"
 msgstr ""
 
-#: settings.php:82
+#: settings.php:88
 msgid "Settings have been saved!"
 msgstr ""
 
-#: settings.php:87 includes/subscribers/subscriber-info.php:92
+#: settings.php:93 includes/subscribers/subscriber-info.php:92
 msgid "Sorry, unable to save. Please try again later!"
 msgstr ""
 
-#: settings.php:92
-msgid "Email already exist, please use another email address"
-msgstr ""
-
-#: settings.php:97
+#: settings.php:98
 msgid "Company"
 msgstr ""
 
-#: settings.php:100
+#: settings.php:101
 msgid "Your company"
 msgstr ""
 
-#: settings.php:107
+#: settings.php:108
 msgid "Your name"
 msgstr ""
 
-#: settings.php:114
+#: settings.php:115
 msgid "Your email address"
 msgstr ""
 
-#: settings.php:118
+#: settings.php:120
+msgid ""
+"This login email address is already in use by one of your brands. Please "
+"find the brand that uses this login email address and change it to something "
+"else so that you can save. Or use another email address."
+msgstr ""
+
+#: settings.php:123
 msgid "Password (leave blank to not change it)"
 msgstr ""
 
-#: settings.php:125
+#: settings.php:130
 msgid "Select your timezone"
 msgstr ""
 
-#: settings.php:133
+#: settings.php:138
 msgid "Select your language"
 msgstr ""
 
-#: settings.php:157
+#: settings.php:162
 msgid "Amazon Web Services Credentials"
 msgstr ""
 
-#: settings.php:159 settings.php:162
+#: settings.php:164 settings.php:167
 msgid "AWS Access Key ID"
 msgstr ""
 
-#: settings.php:166
+#: settings.php:171
 msgid "AWS Secret Access Key"
 msgstr ""
 
-#: settings.php:169
+#: settings.php:174
 msgid "AWS Secret Acesss Key"
 msgstr ""
 
-#: settings.php:173
+#: settings.php:179
+msgid "Amazon SES region"
+msgstr ""
+
+#: settings.php:180
+msgid ""
+"Select your Amazon SES region. Please select the same region as what's set "
+"in your Amazon SES console in the region selection drop down menu at the top "
+"right."
+msgstr ""
+
+#: settings.php:181
+msgid "Your Amazon SES region"
+msgstr ""
+
+#: settings.php:196
 msgid "PayPal account"
 msgstr ""
 
-#: settings.php:174
+#: settings.php:197
 msgid ""
 "If you charge your client(s) a fee for sending newsletters, they'll pay to "
 "this PayPal account. Also, don't forget to turn <strong>Auto Return</strong> "
@@ -2143,77 +2177,77 @@ msgid ""
 "for the <strong>Return URL</strong> to be able to save."
 msgstr ""
 
-#: settings.php:175
+#: settings.php:198
 msgid "PayPal email address"
 msgstr ""
 
-#: settings.php:178
+#: settings.php:201
 msgid "PayPal account email address"
 msgstr ""
 
-#: settings.php:183
+#: settings.php:206
 msgid "Sending preferences"
 msgstr ""
 
-#: settings.php:218
+#: settings.php:241
 msgid "Your license key"
 msgstr ""
 
-#: settings.php:220
+#: settings.php:243
 msgid "You'll need this license key to"
 msgstr ""
 
-#: settings.php:220
+#: settings.php:243
 msgid "download the latest version of Sendy on our website"
 msgstr ""
 
-#: settings.php:223
+#: settings.php:246
 msgid "Your API key"
 msgstr ""
 
-#: subscribe.php:80 subscribe.php:121 subscribe.php:131 unsubscribe.php:76
-#: unsubscribe.php:116 unsubscribe.php:125 unsubscribe.php:316
+#: subscribe.php:81 subscribe.php:122 subscribe.php:132 unsubscribe.php:77
+#: unsubscribe.php:117 unsubscribe.php:126 unsubscribe.php:317
 #: includes/subscribers/edit.php:60
 msgid "Email address is invalid."
 msgstr ""
 
-#: subscribe.php:106 subscribe.php:131 unsubscribe.php:101 unsubscribe.php:125
+#: subscribe.php:107 subscribe.php:132 unsubscribe.php:102 unsubscribe.php:126
 msgid "Some fields are missing."
 msgstr ""
 
-#: subscribe.php:257 subscribe.php:294
+#: subscribe.php:258 subscribe.php:295
 msgid "Thank you, a confirmation email has been sent to you."
 msgstr ""
 
-#: subscribe.php:271
+#: subscribe.php:272
 msgid "A confirmation email has already been sent to you."
 msgstr ""
 
-#: subscribe.php:273
+#: subscribe.php:274
 msgid "You're already subscribed!"
 msgstr ""
 
-#: subscribe.php:366
+#: subscribe.php:367
 msgid "Confirm your subscription to"
 msgstr ""
 
-#: subscribe.php:369
+#: subscribe.php:370
 msgid "Hi!"
 msgstr ""
 
-#: subscribe.php:371
+#: subscribe.php:372
 msgid "Thanks for subscribing to our email list."
 msgstr ""
 
-#: subscribe.php:373
+#: subscribe.php:374
 msgid "Please confirm your subscription by clicking the link below"
 msgstr ""
 
-#: subscribe.php:375 subscribers.php:347
+#: subscribe.php:376 subscribers.php:355
 msgid "Confirm"
 msgstr ""
 
-#: subscribe.php:377
+#: subscribe.php:378
 msgid "Thank you"
 msgstr ""
 
@@ -2277,62 +2311,62 @@ msgstr ""
 msgid "API"
 msgstr ""
 
-#: subscribers.php:191
+#: subscribers.php:199
 msgid "Keyword"
 msgstr ""
 
-#: subscribers.php:203
+#: subscribers.php:211
 msgid "All"
 msgstr ""
 
-#: subscribers.php:205 subscribers.php:314 subscribers.php:396
+#: subscribers.php:213 subscribers.php:322 subscribers.php:404
 #: includes/subscribers/subscriber-info.php:33
 msgid "Unconfirmed"
 msgstr ""
 
-#: subscribers.php:242
+#: subscribers.php:250
 msgid "Last activity"
 msgstr ""
 
-#: subscribers.php:244 subscribers.php:331 unsubscribe-from-list.php:104
+#: subscribers.php:252 subscribers.php:339 unsubscribe-from-list.php:104
 msgid "Unsubscribe"
 msgstr ""
 
-#: subscribers.php:337
+#: subscribers.php:345
 msgid "Resubscribe"
 msgstr ""
 
-#: subscribers.php:405
+#: subscribers.php:413
 msgid "Sorry, unable to unsubscribe. Please try again later!"
 msgstr ""
 
-#: subscribers.php:420
+#: subscribers.php:428
 msgid "No subscribers found."
 msgstr ""
 
-#: subscribers.php:480
+#: subscribers.php:488
 msgid "Add a cron job for autoresponders"
 msgstr ""
 
-#: subscribers.php:483
+#: subscribers.php:491
 msgid "To activate autoresponders, add a"
 msgstr ""
 
-#: subscribers.php:486
+#: subscribers.php:494
 msgid ""
 "This command needs to be run every minute in order to check the database for "
 "any autoresponder emails to send. You'll need to set your cron job with the "
 "following."
 msgstr ""
 
-#: subscribers.php:486
+#: subscribers.php:494
 msgid ""
 "Note that adding cron jobs vary from hosts to hosts, most offer a UI to add "
 "a cron job easily. Check your hosting control panel or consult your host if "
 "unsure."
 msgstr ""
 
-#: subscribers.php:489
+#: subscribers.php:497
 msgid ""
 "Once added, wait one minute. If your cron job is functioning correctly, "
 "you'll see the autoresponder options instead of this modal window when you "
@@ -2351,11 +2385,11 @@ msgstr ""
 msgid "Email to unsubscribe"
 msgstr ""
 
-#: unsubscribe.php:186
+#: unsubscribe.php:187
 msgid "You're unsubscribed."
 msgstr ""
 
-#: unsubscribe.php:317
+#: unsubscribe.php:318
 msgid "Re-subscribe?"
 msgstr ""
 

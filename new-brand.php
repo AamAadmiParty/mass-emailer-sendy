@@ -29,6 +29,17 @@
 				reply_to: "<?php echo addslashes(_('A valid \'Reply to\' email is required'));?>"
 			}
 		});
+		
+		//Check if login email clashes with the main login email address
+		$("#settings-form").submit(function(e){			
+			login_email = $('#login_email').val();
+			if(login_email == "<?php echo get_app_info('email');?>")
+			{
+				e.preventDefault(); 
+				$("#duplicate-login-email").show();
+			}
+			
+		});
 	});
 </script>
 
@@ -43,7 +54,7 @@
 				else
 				{
 					require_once('includes/helpers/ses.php');
-					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 					
 					$quoteArray = array();
 					
@@ -57,6 +68,7 @@
 			<p><strong><?php echo _('If you entered SMTP credentials when you create or edit a brand, emails will be sent via SMTP. Otherwise, emails will be sent via your server (not recommended).');?></strong></p>
 			<p><a href="http://sendy.co/get-started" target="_blank"><?php echo _('View Get Started guide');?> &rarr;</a></p>
 			<?php else:?>
+			<p><strong><?php echo _('SES Region');?>:</strong> <span class="label"><?php echo get_app_info('ses_region');?></span></p>
 			<p><strong><?php echo _('Max send in 24hrs');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[0]));?></span></p>
 			<p><strong><?php echo _('Max send rate');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[1]));?> <?php echo _('per sec');?></span></p>
 			<p><strong><?php echo _('Sent last 24hrs');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[2]));?></span></p>
@@ -65,6 +77,11 @@
 			<?php if(number_format(round($quoteArray[0]))=='0' && number_format(round($quoteArray[1]))=='0' && number_format(round($quoteArray[2]))=='0' && get_app_info('s3_key')!='' && get_app_info('s3_key')!=''):?>
 			<br/>
 			<span style="color:#BB4D47;"><p><?php echo _('Unable to get your SES quota from Amazon. Verify that your AWS credentials are correct. If you\'re certain they\'re correct and are still seeing zeros in your quota, there are 3 possibilities:');?></p><p>1. <?php echo _('You did not attach user policy to your IAM credentials. See Step 5.5 and 5.6 of the <a href="http://sendy.co/get-started" target="_blank">Get Started Guide</a>');?></p><p>2. <?php echo _('Your server clock is out of sync. To fix this, Amazon requires you to <strong>sync your server clock with NTP</strong>. Request your host to do so if you\'re unsure.');?></p><p>3. <?php echo _('Your Amazon SES account may have been suspended by Amazon. Check if you\'ve received an email from Amazon (do check your spam folder as well).');?></p></span>
+			<?php elseif(number_format(round($quoteArray[0]))=='200'):?>
+			
+			<br/>
+			<span style="color:#BB4D47;"><p><?php echo _('You\'re currently in Amazon SES\'s "Sandbox mode".');?></p><p><?php echo _('Please request Amazon for "<a href="http://aws.amazon.com/ses/fullaccessrequest/" target="_blank">production access</a>" to be able to send to and from any email address as well as raise your sending limits from 200 to 10,000 emails per day.');?></p><p><?php echo _('Please also make sure to request production access in the same region as what is set in your main Settings.');?></p></span>
+			
 			<?php endif;?>
 			
 			<?php endif;?>
@@ -93,7 +110,7 @@
               <input type="text" class="input-xlarge" id="from_email" name="from_email" placeholder="<?php echo _('From email');?>">
             </div>
             <p id="verification-check-loader" style="display:none;"><img src="<?php echo get_app_info('path')?>/img/loader.gif" style="width:16px;"/> <?php echo _('Checking if your \'From email\' is verified in your SES console..');?><br/><br/></p>
-            <div class="alert" id="unverified-email" style="display:none;"><strong><i class="icon icon-warning-sign"></i> <?php echo _('Unverified \'From email\'');?></strong>: <?php echo _('See Step 6 of our Get Started Guide on how to verify');?> <a href="http://sendy.co/get-started" target="_blank">http://sendy.co/get-started</a></div>
+            <div class="alert" id="unverified-email" style="display:none;"><strong><i class="icon icon-warning-sign"></i> <?php echo _('Unverified \'From email\'');?></strong>: <?php echo _('Your \'From email\', (or its domain) is either not verified in your Amazon SES console or it is not verified in the same region as what is set in your main Settings. Please follow very closely Step 6 of our Get Started Guide');?> <a href="http://sendy.co/get-started" target="_blank">http://sendy.co/get-started</a></div>
             <div class="alert alert-success" id="verified-email" style="display:none;"><strong><i class="icon icon-ok"></i> <?php echo _('Congrats! This \'From email\' is verified.');?></strong></div>
             
             <?php if(get_app_info('s3_key')!='' && get_app_info('s3_key')!=''):?>
@@ -195,7 +212,8 @@
 	    <div class="well">
 	    	<h3><?php echo _('Client login details');?></h3><br/>
 	    	<p><strong><?php echo _('Login URL');?></strong>: <?php echo get_app_info('path');?></p>
-		    <p><strong><?php echo _('Login email');?></strong>: <span id="login-email"><?php echo _('Not set yet');?> (<?php echo _('uses');?> <em><?php echo _('From email');?></em>)</span></p>
+		    <p><strong><?php echo _('Login email');?></strong>: <span id="login-email"><input type="text" name="login_email" id="login_email" style="margin-top: 5px;"/></span></p>
+		    <div class="alert alert-danger" id="duplicate-login-email" style="display:none;"><i class="icon icon-warning-sign"></i> <?php echo _('This login email is already in use by your main login email address set in your main Settings. Please use another email address.');?> </div>
 	    	<p><strong><?php echo _('Password');?></strong>: <span id="generate-password-wrapper"><?php 
 		    	$pass = ran_string(8, 8, true, false, true);
 		    	echo $pass;
@@ -286,7 +304,7 @@
 $(document).ready(function() {
 	$("#from_email").keyup(function() {
 		$("#reply_to").val($("#from_email").val());
-		$("#login-email").text($("#from_email").val());
+		$("#login-email input").val($("#from_email").val());
 	});
 });
 </script>

@@ -8,7 +8,7 @@ class AmazonSES
 	public $Timezone = '';
 	public $SendRate = 0;
 	
-    public $amazonSES_base_url = "https://email.us-east-1.amazonaws.com";
+    public $amazonSES_base_url = '';
     public $debug = FALSE;
 
     public $aws_access_key_id = "";
@@ -67,16 +67,21 @@ class AmazonSES
     protected function
     make_request
     ($query) {
-    	if(@include('../config.php') && PHP_VERSION!='5.2.17') include_once '../config.php';
-    	$server_path_array1 = explode('/', $_SERVER['SCRIPT_FILENAME']);    	
-    	$delimiter = $server_path_array1[count($server_path_array1)-1];
-    	if($delimiter=='send-now.php') $delimiter = 'includes';
-    	$server_path_array = explode($delimiter, $_SERVER['SCRIPT_FILENAME']);
-	    $server_path = $server_path_array[0];
-    	if(@include($server_path.'includes/config.php')) include_once $server_path.'includes/config.php';
-    	
-	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
-	    else $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+    	$dbHost=$dbUser=$dbPass=$dbName='';
+		if(file_exists('../config.php')) require '../config.php';
+		$server_path_array1 = explode('/', $_SERVER['SCRIPT_FILENAME']);    	
+		$delimiter = $server_path_array1[count($server_path_array1)-1];
+		if($delimiter=='send-now.php') $delimiter = 'includes';
+		$server_path_array = explode($delimiter, $_SERVER['SCRIPT_FILENAME']);
+		$server_path = $server_path_array[0];
+		if(file_exists($server_path.'includes/config.php')) require $server_path.'includes/config.php';
+		if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
+		else $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+		
+		//Get SES endpoint
+		$q = 'SELECT ses_endpoint FROM login LIMIT 1';
+		$r = mysqli_query($mysqli, $q);
+		if ($r) while($row = mysqli_fetch_array($r)) $this->amazonSES_base_url = 'https://'.$row['ses_endpoint'];
 	    
         // Prepare headers and query string.
         $request_url = $this->amazonSES_base_url;

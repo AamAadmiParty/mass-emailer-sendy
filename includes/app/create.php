@@ -8,6 +8,7 @@
 	$app_name = mysqli_real_escape_string($mysqli, $_POST['app_name']);
 	$from_name = mysqli_real_escape_string($mysqli, $_POST['from_name']);
 	$from_email = mysqli_real_escape_string($mysqli, $_POST['from_email']);
+	$login_email = mysqli_real_escape_string($mysqli, $_POST['login_email']);
 	$reply_to = mysqli_real_escape_string($mysqli, $_POST['reply_to']);
 	$currency = mysqli_real_escape_string($mysqli, $_POST['currency']);
 	$delivery_fee = mysqli_real_escape_string($mysqli, $_POST['delivery_fee']);
@@ -30,7 +31,7 @@
 	if ($r)
 	{
 		//insert new record
-		$q = 'INSERT INTO login (name, company, username, password, tied_to, app, timezone, language) VALUES ("'.$from_name.'", "'.$app_name.'", "'.$from_email.'", "'.$pass_encrypted.'", '.get_app_info('userID').', '.mysqli_insert_id($mysqli).', "'.get_app_info('timezone').'", "'.$language.'")';
+		$q = 'INSERT INTO login (name, company, username, password, tied_to, app, timezone, language) VALUES ("'.$from_name.'", "'.$app_name.'", "'.$login_email.'", "'.$pass_encrypted.'", '.get_app_info('userID').', '.mysqli_insert_id($mysqli).', "'.get_app_info('timezone').'", "'.$language.'")';
 		$r = mysqli_query($mysqli, $q);
 		if ($r)
 			header("Location: ".get_app_info('path'));

@@ -430,7 +430,7 @@ if ($r && mysqli_num_rows($r) > 0)
 		$title_treated = str_replace('[Email]', $email, $title_treated);
     	
     	//add tracking 1 by 1px image
-		$html_treated .= '<img src="'.get_app_info('path').'/t/'.short($campaign_id).'/'.short($subscriber_id).'" />';
+		$html_treated .= '<img src="'.get_app_info('path').'/t/'.short($campaign_id).'/'.short($subscriber_id).'" alt=""/>';
 		
 		//send email
 		$mail = new PHPMailer();
@@ -497,7 +497,7 @@ if ($r && mysqli_num_rows($r) > 0)
     {
         while($row = mysqli_fetch_array($r4))
         {
-        	$request_url = 'https://email.us-east-1.amazonaws.com';
+        	$request_url = 'https://'.get_app_info('ses_endpoint');
     		$queue_id = $row['id'];
     		$query_str = $row['query_str'];
     		

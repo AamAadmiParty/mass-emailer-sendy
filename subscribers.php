@@ -145,7 +145,7 @@
             </div>
             <div class="modal-body">
             <p><?php echo _('This is the subscribe form HTML code for');?> <span class="label label-info"><?php echo get_lists_data('name', $_GET['l']);?></span>. <?php if(!get_app_info('is_sub_user')): echo _('To sign users up programmatically, use our');?> <a href="http://sendy.co/api" style="text-decoration: underline;" target="_blank"><?php echo _('API');?></a>.<?php endif;?></p>
-<pre>
+<pre id="form-code">
 &lt;form action=&quot;<?php echo get_app_info('path');?>/subscribe&quot; method=&quot;POST&quot; accept-charset=&quot;utf-8&quot;&gt;
 	&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;&lt;br/&gt;
 	&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;/&gt;
@@ -180,6 +180,14 @@
 	&lt;input type=&quot;hidden&quot; name=&quot;list&quot; value=&quot;<?php echo short($_GET['l']);?>&quot;/&gt;
 	&lt;input type=&quot;submit&quot; name=&quot;submit&quot; id=&quot;submit&quot;/&gt;
 &lt;/form&gt;</pre>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#form-code").click(function(){
+			$(this).selectText();
+		});
+	});
+</script>
 
             </div>
             <div class="modal-footer">

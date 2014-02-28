@@ -13,7 +13,7 @@
 	//------------------------------------------------------//
 	
 	//get brand's data
-	$q = 'SELECT from_name, from_email, reply_to FROM apps WHERE id = '.$app_id;
+	$q = 'SELECT from_name, from_email, reply_to FROM campaigns WHERE id = '.$campaign_id;
 	$r = mysqli_query($mysqli, $q);
 	if ($r && mysqli_num_rows($r) > 0)
 	{

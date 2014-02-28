@@ -13,6 +13,7 @@
 	$reply_to = mysqli_real_escape_string($mysqli, $_POST['reply_to']);
 	$plain = addslashes($_POST['plain']);
 	$html = stripslashes($_POST['html']);
+	if(trim($html)=='<html><head></head><body></body></html>') $html = '';
 	$filename = $_FILES['attachments']['name'];	
 	$file = $_FILES['attachments']['tmp_name'];	
 	$wysiwyg = isset($_POST['wysiwyg']) ? mysqli_real_escape_string($mysqli, $_POST['wysiwyg']) : 1;

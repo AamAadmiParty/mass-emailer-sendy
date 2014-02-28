@@ -2,7 +2,7 @@
 <?php include('includes/login/auth.php');?>
 <?php include('includes/settings/main.php');?>
 <?php include('includes/create/timezone.php');?>
-<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/settings/main.js?2"></script>
+<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/settings/main.js?3"></script>
 <!-- Validation -->
 <script type="text/javascript" src="<?php echo get_app_info('path');?>/js/validate.js"></script>
 <script type="text/javascript">
@@ -44,7 +44,7 @@
 				else
 				{
 					require_once('includes/helpers/ses.php');
-					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 					
 					$quoteArray = array();
 					
@@ -58,6 +58,7 @@
 			<p><strong><?php echo _('If you entered SMTP credentials when you create or edit a brand, emails will be sent via SMTP. Otherwise, emails will be sent via your server (not recommended).');?></strong></p>
 			<p><a href="http://sendy.co/get-started" target="_blank"><?php echo _('View Get Started guide');?> &rarr;</a></p>
 			<?php else:?>
+			<p><strong><?php echo _('SES Region');?>:</strong> <span class="label"><?php echo get_app_info('ses_region');?></span></p>
 			<p><strong><?php echo _('Max send in 24hrs');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[0]));?></span></p>
 			<p><strong><?php echo _('Max send rate');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[1]));?> <?php echo _('per sec');?></span></p>
 			<p><strong><?php echo _('Sent last 24hrs');?>:</strong> <span class="label"><?php echo number_format(round($quoteArray[2]));?></span></p>
@@ -66,6 +67,11 @@
 			<?php if(number_format(round($quoteArray[0]))=='0' && number_format(round($quoteArray[1]))=='0' && number_format(round($quoteArray[2]))=='0' && get_app_info('s3_key')!='' && get_app_info('s3_key')!=''):?>
 			<br/>
 			<span style="color:#BB4D47;"><p><?php echo _('Unable to get your SES quota from Amazon. Verify that your AWS credentials are correct. If you\'re certain they\'re correct and are still seeing zeros in your quota, there are 3 possibilities:');?></p><p>1. <?php echo _('You did not attach user policy to your IAM credentials. See Step 5.5 and 5.6 of the <a href="http://sendy.co/get-started" target="_blank">Get Started Guide</a>');?></p><p>2. <?php echo _('Your server clock is out of sync. To fix this, Amazon requires you to <strong>sync your server clock with NTP</strong>. Request your host to do so if you\'re unsure.');?></p><p>3. <?php echo _('Your Amazon SES account may have been suspended by Amazon. Check if you\'ve received an email from Amazon (do check your spam folder as well).');?></p></span>
+			<?php elseif(number_format(round($quoteArray[0]))=='200'):?>
+			
+			<br/>
+			<span style="color:#BB4D47;"><p><?php echo _('You\'re currently in Amazon SES\'s "Sandbox mode".');?></p><p><?php echo _('Please request Amazon for "<a href="http://aws.amazon.com/ses/fullaccessrequest/" target="_blank">production access</a>" to be able to send to and from any email address as well as raise your sending limits from 200 to 10,000 emails per day.');?></p><p><?php echo _('Please also make sure to request production access in the same region as what is set in your main Settings.');?></p></span>
+			
 			<?php endif;?>
 			
 			<?php endif;?>
@@ -85,11 +91,6 @@
 		<div class="alert alert-error" id="alert-error1" style="display:none;">
 		  <button class="close" onclick="$('.alert-error').hide();">×</button>
 		  <strong><?php echo _('Sorry, unable to save. Please try again later!');?></strong>
-		</div>
-		
-		<div class="alert alert-error" id="alert-error2" style="display:none;">
-		  <button class="close" onclick="$('.alert-error').hide();">×</button>
-		  <strong><?php echo _('Email already exist, please use another email address');?></strong>
 		</div>
 		
 	    <form action="<?php echo get_app_info('path')?>/includes/settings/save.php" method="POST" accept-charset="utf-8" class="form-vertical" id="settings-form">
@@ -114,6 +115,10 @@
 	              <input type="text" class="input-xlarge" id="email" name="email" placeholder="<?php echo _('Your email address');?>" value="<?php echo get_user_data('username');?>" autocomplete="off">
 	            </div>
 	        </div>
+	        <div class="alert alert-error" id="alert-error2" style="display:none;">
+			  <button class="close" onclick="$('.alert-error').hide();">×</button>
+			  <span><i class="icon icon-warning-sign"></i> <?php echo _('This login email address is already in use by one of your brands. Please find the brand that uses this login email address and change it to something else so that you can save. Or use another email address.');?></span>
+			</div>
 	        
 	        <label class="control-label" for="password"><?php echo _('Password (leave blank to not change it)');?></label>
 	    	<div class="control-group">
@@ -170,6 +175,30 @@
 	            </div>
 	        </div>
 	        <br/>
+	        
+			<h3><?php echo _('Amazon SES region');?></h3><br/>	  
+			<p style="width: 280px;"><?php echo _('Select your Amazon SES region. Please select the same region as what\'s set in your Amazon SES console in the region selection drop down menu at the top right.');?></p>      
+	        <label for="ses_endpoint"><?php echo _('Your Amazon SES region');?></label>
+	        <?php 
+		        if(get_user_data('ses_endpoint')=='email.us-east-1.amazonaws.com') $endpoint_name = 'N. Virginia';
+		        else if(get_user_data('ses_endpoint')=='email.us-west-2.amazonaws.com') $endpoint_name = 'Oregon';
+		        else if(get_user_data('ses_endpoint')=='email.eu-west-1.amazonaws.com') $endpoint_name = 'Ireland';
+	        ?>
+    		<select id="ses_endpoint" name="ses_endpoint">
+			  <option value="<?php echo get_user_data('ses_endpoint');?>"><?php echo $endpoint_name;?></option> 
+			  <?php if($endpoint_name == 'N. Virginia'):?>
+			  <option value="email.us-west-2.amazonaws.com">Oregon</option>
+			  <option value="email.eu-west-1.amazonaws.com">Ireland</option>
+			  <?php elseif($endpoint_name == 'Oregon'):?>
+			  <option value="email.us-east-1.amazonaws.com">N. Virginia</option> 
+			  <option value="email.eu-west-1.amazonaws.com">Ireland</option>
+			  <?php elseif($endpoint_name == 'Ireland'):?>
+			  <option value="email.us-east-1.amazonaws.com">N. Virginia</option> 
+			  <option value="email.us-west-2.amazonaws.com">Oregon</option>
+			  <?php endif;?>
+			</select>
+	        <br/><br/>
+	        
 	        <h3><?php echo _('PayPal account');?></h3><br/>
 	        <p style="width: 280px;"><?php echo _('If you charge your client(s) a fee for sending newsletters, they\'ll pay to this PayPal account. Also, don\'t forget to turn <strong>Auto Return</strong> ON in your PayPal account under <strong>Profile > My sellings tools > Website preferences</strong> so that your client will be automatically re-directed to the sending script after payment. Just use your website\'s URL for the <strong>Return URL</strong> to be able to save.');?></p>
 	        <label class="control-label" for="paypal"><?php echo _('PayPal email address');?></label>

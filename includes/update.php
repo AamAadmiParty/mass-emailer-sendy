@@ -337,6 +337,22 @@
 		mysqli_query($mysqli, 'CREATE INDEX s_email ON subscribers (email)');
 	}
 	
+	//================= Version 1.1.8 ===============//
+	//New column in table: login
+	//=================================================//
+	//Create new 'ses_endpoint' in 'login' table
+	$q = "SHOW COLUMNS FROM login WHERE Field = 'ses_endpoint'";
+	$r = mysqli_query($mysqli, $q);
+	if (mysqli_num_rows($r) == 0)
+	{
+	    $r2 = mysqli_query($mysqli, 'alter table login ADD COLUMN ses_endpoint VARCHAR (100)');
+	    if($r2)
+	    {
+		    $q3 = 'UPDATE login SET ses_endpoint = "email.us-east-1.amazonaws.com" LIMIT 1';
+		    mysqli_query($mysqli, $q3);
+	    }
+	}
+	
 	//================= Version 1.1.7.3 ===============//
 	//Convert to_send_lists and lists columns to TEXT type
 	//=================================================//

@@ -24,7 +24,6 @@
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/responsive-tables.js"></script>
 		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/main.js?2"></script>
-		<script type="text/javascript" src="<?php echo get_app_info('path');?>/js/jquery.jeditable.mini.js"></script>
 		<title><?php echo get_app_info('company');?></title>
 	</head>
 	<body>
@@ -39,9 +38,9 @@
 	          	          
 	          <!-- Check if sub user -->
 	          <?php if(!get_app_info('is_sub_user')):?>
-	          <a class="brand" href="<?php echo get_app_info('path');?>/"><img src="img/sendy-avatar.png" title="" class="main-gravatar"/><?php echo get_app_info('company');?></a>
+	          <a class="brand" href="<?php echo get_app_info('path');?>/"><img src="https://www.gravatar.com/avatar/<?php echo md5(strtolower(trim(get_app_info('email'))));?>?s=36&d=<?php echo get_app_info('path');?>/img/sendy-avatar.png" title="" class="main-gravatar"/><?php echo get_app_info('company');?></a>
 	          <?php else:?>
-	          <a class="brand" href="<?php echo get_app_info('path');?>/app?i=<?php echo get_app_info('restricted_to_app');?>"><img src="img/default-favicon-alt.png" title="" class="main-gravatar"/><?php echo get_app_info('company');?></a>
+	          <a class="brand" href="<?php echo get_app_info('path');?>/app?i=<?php echo get_app_info('restricted_to_app');?>"><img src="https://www.gravatar.com/avatar/<?php echo md5(strtolower(trim(get_app_info('email'))));?>?s=36&d=<?php echo get_app_info('path');?>/img/default-favicon-alt.png" title="" class="main-gravatar"/><?php echo get_app_info('company');?></a>
 	          <?php endif;?>
 	          
 	          <?php if(currentPage()!='login.php' && currentPage()!='_install.php'): ?>

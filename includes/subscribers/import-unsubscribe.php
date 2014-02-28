@@ -5,8 +5,7 @@
 /********************************/
 $databasetable = "subscribers";
 $fieldseparator = ",";
-$lineseparator = "\r";
-$lineseparator2 = "\n";
+$lineseparator = "\n";
 $csvfile = $_FILES['csv_file']['tmp_name'];
 $userID = get_app_info('main_userID');
 $app = $_POST['app'];
@@ -39,11 +38,12 @@ $csvcontent = fread($file,$size);
 fclose($file);
 
 $linearray = array();
-foreach(preg_split( "/($lineseparator|$lineseparator2)/", $csvcontent ) as $line)
+
+foreach(explode($lineseparator,$csvcontent) as $line)
 {
 	//cleanup line
 	$line = trim($line," \t");
-// 	$line = str_replace("\n","",$line);
+	$line = str_replace("\r","",$line);
 	$line = str_replace('"','',$line);
 	$line = str_replace("'",'',$line);
 	
@@ -67,7 +67,6 @@ foreach(preg_split( "/($lineseparator|$lineseparator2)/", $csvcontent ) as $line
 		$query = 'UPDATE '.$databasetable.' SET unsubscribed = 1 WHERE email = "'.$line.'" AND list = '.$listID.' AND userID = '.$userID;
 		mysqli_query($mysqli, $query);
 	}
-	
 }
 
 //return

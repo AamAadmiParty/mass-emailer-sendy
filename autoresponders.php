@@ -10,6 +10,7 @@
 	    global $dbUser;
 	    global $dbPass;
 	    global $dbName;
+	    global $dbPort;
 	    
 	    // Attempt to connect to database server
 	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
@@ -423,7 +424,7 @@
 							$title_treated = str_replace('[Email]', $email, $title_treated);
 					    	
 					    	//add tracking 1 by 1px image
-							$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" />';
+							$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" alt=""/>';
 							
 							//send email
 							$mail = new PHPMailer();
@@ -837,7 +838,7 @@
 										$title_treated = str_replace('[Email]', $email, $title_treated);
 								    	
 								    	//add tracking 1 by 1px image
-										$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" />';
+										$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" alt=""/>';
 										
 										//send email
 										$mail = new PHPMailer();
@@ -1255,7 +1256,7 @@
 										$title_treated = str_replace('[Email]', $email, $title_treated);
 								    	
 								    	//add tracking 1 by 1px image
-										$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" />';
+										$html_treated .= '<img src="'.APP_PATH.'/t/'.short($ares_id).'/'.short($subscriber_id).'/a" alt=""/>';
 										
 										//send email
 										$mail = new PHPMailer();

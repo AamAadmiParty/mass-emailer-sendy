@@ -2,19 +2,16 @@
 <?php include('includes/login/auth.php');?>
 <?php include('includes/create/main.php');?>
 
-<!--
 <script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?4"></script>
 <script src="<?php echo get_app_info('path');?>/js/redactor/fontcolor.js?4"></script>
 <link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?4" />
--->
-<script src="<?php echo get_app_info('path');?>/ckeditor/ckeditor.js"></script>
 <?php 
 	$edit = true;
 	
 	if(get_saved_data('wysiwyg')):
 	$html_code_msg = '<span class="wysiwyg-note">'._('Switch to HTML editor if the WYSIWYG editor is causing your newsletter to look weird.').'</span>';
 ?>
-<!--<script src="<?php echo get_app_info('path');?>/js/create/editor.js?2"></script>-->
+<script src="<?php echo get_app_info('path');?>/js/create/editor.js?2"></script>
 <?php 
 else:
 	$html_code_msg = '<span class="wysiwyg-note">'._('Switch to the WYSIWYG editor to use formatting tools.').'</span>';
@@ -182,8 +179,7 @@ endif;?>
 			    	<p>
 				    	<label class="control-label" for="html"><?php echo _('HTML code');?></label>
 				    	<div class="btn-group">
-				    	<?php $wys_status = get_saved_data('wysiwyg');?>
-				    	<?php if($wys_status):?>
+				    	<?php if(get_saved_data('wysiwyg')):?>
 						  <button class="btn" id="toggle-wysiwyg"><?php echo _('Save and switch to HTML editor');?></button> <?php echo $html_code_msg;?>
 						<?php else:?>
 						  <button class="btn" id="toggle-wysiwyg"><?php echo _('Save and switch to WYSIWYG editor');?></button> <?php echo $html_code_msg;?>
@@ -221,8 +217,7 @@ endif;?>
 						<br/>
 			            <div class="control-group">
 					    	<div class="controls">
-				              <!--<textarea class="input-xlarge" id="html" name="html" rows="10" placeholder="<?php echo _('Email content');?>"><?php echo get_saved_data('html_text');?></textarea>-->
-				              <textarea class="<?php if($wys_status) echo 'ckeditor';?> input-xlarge" id="html" name="html" rows="10" placeholder="<?php echo _('Email content');?>"><?php echo get_saved_data('html_text');?></textarea>
+				              <textarea class="input-xlarge" id="html" name="html" rows="10" placeholder="<?php echo _('Email content');?>"><?php echo get_saved_data('html_text');?></textarea>
 				            </div>
 				        </div>
 				        <p><?php echo _('Use the following tags in your subject, plain text or HTML code and they\'ll automatically be formatted when your campaign is sent. For web version and unsubscribe tags, you can style them with inline CSS.');?></p><br/>

@@ -65,13 +65,13 @@
 	//------------------------------------------------------//
 	{
 		global $mysqli;
-		$q = 'SELECT COUNT(id) FROM subscribers WHERE list = '.$val.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1';
+		$q = 'SELECT COUNT(list) FROM subscribers use index (s_list) WHERE list = '.$val.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1';
 		$r = mysqli_query($mysqli, $q);
 		if ($r && mysqli_num_rows($r) > 0)
 		{
 		    while($row = mysqli_fetch_array($r))
 		    {
-				return $row['COUNT(id)'];
+				return $row['COUNT(list)'];
 		    }  
 		}
 	}

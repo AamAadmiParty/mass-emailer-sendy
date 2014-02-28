@@ -11,6 +11,7 @@
 	    global $dbUser;
 	    global $dbPass;
 	    global $dbName;
+	    global $dbPort;
 	    
 	    // Attempt to connect to database server
 	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
@@ -39,6 +40,7 @@
 	$from_email = isset($_POST['from_email']) ? mysqli_real_escape_string($mysqli, $_POST['from_email']) : '';
 	$aws_key = isset($_POST['aws_key']) ? $_POST['aws_key'] : '';
 	$aws_secret = isset($_POST['aws_secret']) ? $_POST['aws_secret'] : '';
+	$ses_endpoint = isset($_POST['ses_endpoint']) ? $_POST['ses_endpoint'] : '';
 	$bounce_simulator_email = 'bounce@simulator.amazonses.com';
 	$complaint_simulator_email = 'complaint@simulator.amazonses.com';
 	
@@ -85,7 +87,7 @@
 			//If true, set email forwardinig to false
 			if($bounce_n_complaint_setup)
 			{
-				$ses = new SimpleEmailService($aws_key, $aws_secret);
+				$ses = new SimpleEmailService($aws_key, $aws_secret, $ses_endpoint);
 				$ses->setIdentityFeedbackForwardingEnabled($from_email, 'false');
 			}
 			

@@ -94,7 +94,7 @@
   			if(!get_app_info('is_sub_user') && get_app_info('s3_key')!='' && get_app_info('s3_secret')!='')
   			{
 	  			require_once('includes/helpers/ses.php');
-				$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+				$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 				$v_addresses = $ses->ListIdentities();
 				$verifiedEmailsArray = array();
 				$verifiedDomainsArray = array();
@@ -109,7 +109,7 @@
 					echo '
 						<div class="alert alert-danger">
 							<p><strong>'._('Unverified \'From email\'').': '.$from_email.'</strong></p>
-							<p>'._('Your \'from email\', (or its domain) is not verified in your SES console, your emails cannot be sent. Please see Step 6 of our Get Started Guide on how to verify').' <a href="http://sendy.co/get-started" target="_blank">http://sendy.co/get-started</a></p>
+							<p>'._('Your \'From email\', (or its domain) is either not verified in your Amazon SES console or it is not verified in the same region as what is set in your main Settings. Please follow very closely Step 6 of our Get Started Guide').' <a href="http://sendy.co/get-started" target="_blank">http://sendy.co/get-started</a></p>
 						</div>
 						<script type="text/javascript">
 							$(document).ready(function() {
@@ -127,7 +127,7 @@
 				else
 				{
 					//Set email feedback forwarding to false
-					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+					$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 					$ses->setIdentityFeedbackForwardingEnabled($from_email, 'false');
 					$ses->setIdentityFeedbackForwardingEnabled($from_email_domain, 'false');
 				}
@@ -205,7 +205,7 @@
 	        <?php 
 	        	//check SES quota and sends left
 		    	require_once('includes/helpers/ses.php');
-				$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+				$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 				$quotaArray = array();
 				foreach($ses->getSendQuota() as $quota){
 					array_push($quotaArray, $quota);
@@ -273,7 +273,7 @@
 		    	
 		    	<?php if($ses_quota==200):?>
 		    	<div class="alert" id="no-production-access">
-				  <?php echo _('It looks like you have not been granted production access by Amazon. You can only send to email addresses that you\'ve verified in your');?> <a href="https://console.aws.amazon.com/ses/home#verified-senders:email" target="_blank" style="text-decoration:underline"><?php echo _('Amazon SES console.');?></a> <?php echo _('If you try to send newsletters to emails NOT verified in your SES console, your recipient will not receive the newsletter.');?><br/><br/><a href="http://aws.amazon.com/ses/fullaccessrequest/" target="_blank" style="text-decoration:underline"><?php echo _('Request production access');?></a> <?php echo _('to lift this restriction.');?><br/>
+				  <?php echo _('It looks like you have not been granted production access by Amazon. You can only send to email addresses that you\'ve verified in your');?> <a href="https://console.aws.amazon.com/ses/home#verified-senders:email" target="_blank" style="text-decoration:underline"><?php echo _('Amazon SES console.');?></a> <?php echo _('If you try to send newsletters to emails NOT verified in your SES console, your recipient will not receive the newsletter.');?><br/><br/><a href="http://aws.amazon.com/ses/fullaccessrequest/" target="_blank" style="text-decoration:underline"><?php echo _('Request production access');?></a> <?php echo _('to lift this restriction.');?><br/><br/><?php echo _('Please also make sure to request production access in the same region as what is set in your main Settings.');?><br/>
 				</div>
 				<?php endif;?>
 		    	
@@ -490,7 +490,7 @@
 					//Show loading modal window
 					$('#sns-loading').modal('show');
 				
-					$.post("<?php echo get_app_info('path')?>/includes/campaigns/check_sns.php", { from_email: "<?php echo $from_email;?>", aws_key: "<?php echo get_app_info('s3_key')?>", aws_secret: "<?php echo get_app_info('s3_secret')?>" },
+					$.post("<?php echo get_app_info('path')?>/includes/campaigns/check_sns.php", { from_email: "<?php echo $from_email;?>", aws_key: "<?php echo get_app_info('s3_key')?>", aws_secret: "<?php echo get_app_info('s3_secret')?>", ses_endpoint: "<?php echo get_app_info('ses_endpoint')?>" },
 					  function(data) {
 					      if(data==true) 
 					      {
@@ -557,7 +557,7 @@
 						//Show loading modal window
 						$('#sns-loading').modal('show');
 						
-						$.post("<?php echo get_app_info('path')?>/includes/campaigns/check_sns.php", { from_email: "<?php echo $from_email;?>", aws_key: "<?php echo get_app_info('s3_key')?>", aws_secret: "<?php echo get_app_info('s3_secret')?>" },
+						$.post("<?php echo get_app_info('path')?>/includes/campaigns/check_sns.php", { from_email: "<?php echo $from_email;?>", aws_key: "<?php echo get_app_info('s3_key')?>", aws_secret: "<?php echo get_app_info('s3_secret')?>", ses_endpoint: "<?php echo get_app_info('ses_endpoint')?>" },
 						  function(data) {
 						      if(data==true) 
 						      {

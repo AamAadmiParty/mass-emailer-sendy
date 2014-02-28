@@ -15,6 +15,7 @@
 	$paypal = isset($_POST['paypal']) ? mysqli_real_escape_string($mysqli, $_POST['paypal']) : '';
 	$timezone = mysqli_real_escape_string($mysqli, $_POST['timezone']);
 	$language = mysqli_real_escape_string($mysqli, $_POST['language']);
+	$ses_endpoint = mysqli_real_escape_string($mysqli, $_POST['ses_endpoint']);
 	//app data
 	$from_name = isset($_POST['from_name']) ? mysqli_real_escape_string($mysqli, $_POST['from_name']) : '';
 	$from_email = isset($_POST['from_email']) ? mysqli_real_escape_string($mysqli, $_POST['from_email']) : '';
@@ -44,9 +45,9 @@
 	if(!get_app_info('is_sub_user'))
 	{
 		if($change_pass)
-			$q = 'UPDATE login SET company="'.$company.'", name="'.$name.'", username="'.$email.'", password="'.$pass_encrypted.'", s3_key="'.$aws_key.'", s3_secret="'.$aws_secret.'", paypal="'.$paypal.'", timezone = "'.$timezone.'", language = "'.$language.'" WHERE id = '.$userID;
+			$q = 'UPDATE login SET company="'.$company.'", name="'.$name.'", username="'.$email.'", password="'.$pass_encrypted.'", s3_key="'.$aws_key.'", s3_secret="'.$aws_secret.'", paypal="'.$paypal.'", timezone = "'.$timezone.'", language = "'.$language.'", ses_endpoint = "'.$ses_endpoint.'" WHERE id = '.$userID;
 		else
-			$q = 'UPDATE login SET company="'.$company.'", name="'.$name.'", username="'.$email.'", s3_key="'.$aws_key.'", s3_secret="'.$aws_secret.'", paypal="'.$paypal.'", timezone = "'.$timezone.'", language = "'.$language.'" WHERE id = '.$userID;
+			$q = 'UPDATE login SET company="'.$company.'", name="'.$name.'", username="'.$email.'", s3_key="'.$aws_key.'", s3_secret="'.$aws_secret.'", paypal="'.$paypal.'", timezone = "'.$timezone.'", language = "'.$language.'", ses_endpoint = "'.$ses_endpoint.'" WHERE id = '.$userID;
 		$r = mysqli_query($mysqli, $q);
 		if ($r)
 		{

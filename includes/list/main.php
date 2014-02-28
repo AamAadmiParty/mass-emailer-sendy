@@ -91,13 +91,13 @@
 		}
 		
 		//if not, just return the subscriber count
-		$q = 'SELECT COUNT(*) FROM subscribers WHERE list = '.$lid.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1';
+		$q = 'SELECT COUNT(list) FROM subscribers use index (s_list) WHERE list = '.$lid.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1';
 		$r = mysqli_query($mysqli, $q);
 		if ($r)
 		{
 			while($row = mysqli_fetch_array($r))
 		    {
-				return $row['COUNT(*)'];
+				return $row['COUNT(list)'];
 		    } 
 		}
 	}
@@ -107,9 +107,9 @@
 	//------------------------------------------------------//
 	{
 		global $mysqli;
-		$q = 'SELECT COUNT(*) FROM subscribers WHERE list = '.$lid.' AND unsubscribed = 1';
+		$q = 'SELECT COUNT(list) FROM subscribers use index (s_list) WHERE list = '.$lid.' AND unsubscribed = 1';
 		$r = mysqli_query($mysqli, $q);
-		if ($r) while($row = mysqli_fetch_array($r)) return $row['COUNT(*)'];
+		if ($r) while($row = mysqli_fetch_array($r)) return $row['COUNT(list)'];
 	}
 	
 	//------------------------------------------------------//
@@ -126,9 +126,9 @@
 	//------------------------------------------------------//
 	{
 		global $mysqli;
-		$q = 'SELECT COUNT(*) FROM subscribers WHERE list = '.$lid.' AND bounced = 1';
+		$q = 'SELECT COUNT(list) FROM subscribers use index (s_list) WHERE list = '.$lid.' AND bounced = 1';
 		$r = mysqli_query($mysqli, $q);
-		if ($r) while($row = mysqli_fetch_array($r)) return $row['COUNT(*)'];
+		if ($r) while($row = mysqli_fetch_array($r)) return $row['COUNT(list)'];
 	}
 	
 	//------------------------------------------------------//

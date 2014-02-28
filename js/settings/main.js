@@ -13,6 +13,7 @@ $(document).ready(function() {
 		paypal = $form.find('input[name="paypal"]').val(),
 		timezone = $form.find('#timezone').val(),
 		language = $form.find('#language').val(),
+		ses_endpoint = $form.find('#ses_endpoint').val(),
 		from_name = $form.find('input[name="from_name"]').val(),
 		from_email = $form.find('input[name="from_email"]').val(),
 		reply_to = $form.find('input[name="reply_to"]').val(),
@@ -27,7 +28,7 @@ $(document).ready(function() {
 			email_valid = true;
 		
 		if(personal_name!="" && company!="" && email!="" && email_valid==true)
-		$.post(url, { uid: uid, personal_name: personal_name, company: company, email: email, password: password, aws_key: aws_key, aws_secret: aws_secret, paypal: paypal, timezone: timezone, language:language, from_name: from_name, from_email: from_email, reply_to: reply_to },
+		$.post(url, { uid: uid, personal_name: personal_name, company: company, email: email, password: password, aws_key: aws_key, aws_secret: aws_secret, paypal: paypal, timezone: timezone, language:language, ses_endpoint:ses_endpoint, from_name: from_name, from_email: from_email, reply_to: reply_to },
 		  function(data) {
 		      if(data)
 		      {

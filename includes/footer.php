@@ -4,7 +4,7 @@
 	      	<!-- Check if sub user -->
 			<?php if(!get_app_info('is_sub_user')):?>
 	        <p>
-	        	&copy; <?php echo date("Y",time())?> <a href="http://sendy.co" title="" target="_blank">Sendy</a> | <a href="https://sendy.co/forum/" target="_blank">Support forum</a> | <?php echo get_app_info('version');?> 
+	        	&copy; <?php echo date("Y",time())?> <a href="http://sendy.co" title="" target="_blank">Sendy</a> | <a href="http://sendy.co/troubleshooting" target="_blank">Troubleshooting</a> | <a href="https://sendy.co/forum/" target="_blank">Support forum</a> | <?php echo get_app_info('version');?> 
 	        	<?php 
 		        	if(get_app_info('version_latest') > get_app_info('version')):
 	        	?>

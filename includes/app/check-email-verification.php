@@ -29,7 +29,7 @@
 	//Check if from email is verified in SES console
 	if(!get_app_info('is_sub_user') && get_app_info('s3_key')!='' && get_app_info('s3_secret')!='')
 	{
-		$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'));
+		$ses = new SimpleEmailService(get_app_info('s3_key'), get_app_info('s3_secret'), get_app_info('ses_endpoint'));
 		$v_addresses = $ses->ListIdentities();
 		$verifiedEmailsArray = array();
 		$verifiedDomainsArray = array();

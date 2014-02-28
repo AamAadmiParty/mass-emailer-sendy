@@ -16,6 +16,7 @@
 	$thankyou = isset($_POST['thankyou_email']) ? mysqli_real_escape_string($mysqli, $_POST['thankyou_email']) : '';
 	$thankyou_subject = addslashes(mysqli_real_escape_string($mysqli, $_POST['thankyou_subject']));
 	$thankyou_message = addslashes($_POST['thankyou_message']);
+	if(trim($thankyou_message)=='<html><head></head><body></body></html>') $thankyou_message = '';
 	if($thankyou!='')
 		$thankyou = 1;
 	else
@@ -26,8 +27,10 @@
 	$goodbye = isset($_POST['goodbye_email']) ? mysqli_real_escape_string($mysqli, $_POST['goodbye_email']) : '';
 	$goodbye_subject = addslashes(mysqli_real_escape_string($mysqli, $_POST['goodbye_subject']));
 	$goodbye_message = addslashes($_POST['goodbye_message']);
+	if(trim($goodbye_message)=='<html><head></head><body></body></html>') $goodbye_message = '';
 	$confirmation_subject = addslashes(mysqli_real_escape_string($mysqli, $_POST['confirmation_subject']));
 	$confirmation_email = addslashes($_POST['confirmation_email']);
+	if(trim($confirmation_email)=='<html><head></head><body></body></html>') $confirmation_email = '';
 	if($goodbye!='')
 		$goodbye = 1;
 	else

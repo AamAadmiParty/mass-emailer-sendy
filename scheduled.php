@@ -11,6 +11,7 @@
 	    global $dbUser;
 	    global $dbPass;
 	    global $dbName;
+	    global $dbPort;
 	    
 	    // Attempt to connect to database server
 	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
@@ -38,7 +39,7 @@
 <?php include('includes/helpers/locale.php');?>
 <?php 	
 	//setup cron
-	$q = 'SELECT id, cron, send_rate FROM login LIMIT 1';
+	$q = 'SELECT id, cron, send_rate, ses_endpoint FROM login LIMIT 1';
 	$r = mysqli_query($mysqli, $q);
 	if ($r)
 	{
@@ -47,6 +48,7 @@
 			$cron = $row['cron'];
 			$userid = $row['id'];
 			$send_rate = $row['send_rate'];
+			$ses_endpoint = $row['ses_endpoint'];
 			
 			if($cron==0)
 			{
@@ -467,7 +469,7 @@
 						$title_treated = str_replace('[Email]', $email, $title_treated);
 				    	
 				    	//add tracking 1 by 1px image
-						$html_treated .= '<img src="'.APP_PATH.'/t/'.short($campaign_id).'/'.short($subscriber_id).'" />';
+						$html_treated .= '<img src="'.APP_PATH.'/t/'.short($campaign_id).'/'.short($subscriber_id).'" alt=""/>';
 						
 						//Get server path
 						$server_path_array = explode('scheduled.php', $_SERVER['SCRIPT_FILENAME']);
@@ -544,7 +546,7 @@
 				    {
 				        while($row = mysqli_fetch_array($r4))
 				        {
-				        	$request_url = 'https://email.us-east-1.amazonaws.com';
+				        	$request_url = 'https://'.$ses_endpoint;
 				    		$queue_id = $row['id'];
 				    		$query_str = stripslashes($row['query_str']);
 				    		

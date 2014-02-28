@@ -12,13 +12,10 @@
 	}
 ?>
 
-<!--
 <script src="<?php echo get_app_info('path');?>/js/redactor/redactor.min.js?4"></script>
 <script src="<?php echo get_app_info('path');?>/js/redactor/fontcolor.js?4"></script>
 <link rel="stylesheet" href="<?php echo get_app_info('path');?>/js/redactor/redactor.css?4" />
 <script src="<?php echo get_app_info('path');?>/js/create/editor.js?2"></script>
--->
-<script src="<?php echo get_app_info('path');?>/ckeditor/ckeditor.js"></script>
 
 <!-- Validation -->
 <script type="text/javascript" src="<?php echo get_app_info('path');?>/js/validate.js"></script>
@@ -150,8 +147,7 @@
 						<br/>
 			            <div class="control-group">
 					    	<div class="controls">
-				              <!-- <textarea class="input-xlarge" id="html" name="html" rows="10" placeholder="Email content"></textarea> -->
-				              <textarea class="ckeditor input-xlarge" id="html" name="html" rows="10" placeholder="Email content"></textarea>
+				              <textarea class="input-xlarge" id="html" name="html" rows="10" placeholder="Email content"></textarea>
 				            </div>
 				        </div>
 				    	<p><?php echo _('Use the following tags in your subject, plain text or HTML code and they\'ll automatically be formatted when your campaign is sent. For web version and unsubscribe tags, you can style them with inline CSS.');?></p><br/>
