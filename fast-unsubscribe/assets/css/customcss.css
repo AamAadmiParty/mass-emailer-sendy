@@ -1,0 +1,16 @@
+#loading-indicator {
+  position: absolute;
+  bottom: 40px;
+  right: 185px;
+}   
+html,
+body {
+  margin:0;
+  padding:0;
+
+  padding-top: 30px;
+}
+#main-content {
+  padding:10px;
+  padding-bottom:120px;   /* Height of the footer element */
+}
