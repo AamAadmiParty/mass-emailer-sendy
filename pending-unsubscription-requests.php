@@ -41,7 +41,7 @@
 				      <th><?php echo _('Volunteer Email');?></th>
 				      <th><?php echo _('Volunteer Phone');?></th>
 				      <th><?php echo _('Emails to Unsubscribe');?></th>
-				      <th><?php echo _('Corresponsing Ids');?></th>
+				      <th><?php echo _('Number of emails');?></th>
 				      <th><?php echo _('Date');?></th>
 				      <th><?php echo _('Status');?></th>
 				    </tr>
@@ -57,7 +57,6 @@
 		  			$phone = stripslashes($row['phone']);
 		  			$raw_emails = stripslashes($row['raw_emails']);
 		  			$idstounsubscribe = stripslashes($row['idstounsubscribe']);
-		  			// $date_created = parse_date($row['date_created'], 'short', true);
 		  			$date_created = date('d/m/y h:i:s A', strtotime($row['date_created']));
 		  			$status = '<a href="javascript:void(0)" id="subscription-'.$id.'" class="label">'._('Pending').'</a>';
 
@@ -68,8 +67,8 @@
 					<td><?php echo $name;?></td>
 					<td><?php echo $email;?></td>
 					<td><?php echo $phone;?></td>
-					<td <?echo strlen($raw_emails)>20?"title='$raw_emails'":"";?>> <?php echo strlen($raw_emails)>20?substr($raw_emails,0,20).'...':$raw_emails;?></td>
-					<td <?echo strlen($idstounsubscribe)>10?"title='$idstounsubscribe'":"";?>> <?php echo strlen($idstounsubscribe)>10?substr($idstounsubscribe,0,10).'...':$idstounsubscribe;?></td>
+					<td <?echo "title='$raw_emails\n--------------------------------\n$idstounsubscribe'"?>> <?php echo strlen($raw_emails)>20?substr($raw_emails,0,20).'...':$raw_emails;?></td>
+					<td><?php echo substr_count($idstounsubscribe, ",")+1;?></td>
 					<td><?php echo $date_created;?></td>
 					<td><?php echo $status;?></td>
 					</tr>
@@ -86,7 +85,7 @@
 					?>
 					<tr>
 					<td><input type="checkbox" class="select_all" id="checkbox2"></td>
-					<td colspan="8"><label for="checkbox2">Select All</label></td>
+					<td colspan="9"><label for="checkbox2">Select All</label></td>
 					<?
 				}
 				else				
