@@ -48,6 +48,7 @@ $allEmailIds = $_POST['hidden1'];
 $name = $_POST['hidden2'];
 $email = $_POST['hidden3'];
 $phone = $_POST['hidden4'];
+$raw_emails = $_POST['hidden5'];
 
 include("config.php");
 
@@ -58,12 +59,13 @@ if (mysqli_connect_errno()) {
 }
 
 /* create a prepared statement */
-$stmt = $db->prepare("INSERT into unsubscriberequests (name,email,phone,idstounsubscribe,status) VALUES(?,?,?,?,?)");
+$stmt = $db->prepare("INSERT into unsubscriberequests (name,email,phone,idstounsubscribe,raw_emails,status) VALUES(?,?,?,?,?,?)");
 $stmt->bindParam(1,$name);
 $stmt->bindParam(2,$email);
 $stmt->bindParam(3,$phone);
 $stmt->bindParam(4,$allEmailIds);
-$stmt->bindValue(5,0);
+$stmt->bindValue(5,$raw_emails);
+$stmt->bindValue(6,0);
 
 /* execute query */
 $stmt->execute();

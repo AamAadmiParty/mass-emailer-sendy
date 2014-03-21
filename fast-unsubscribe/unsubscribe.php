@@ -40,6 +40,7 @@ $email = $_POST['input5'];
 $phone = $_POST['input6'];
 $emailsTU = $_POST['textarea1'];
 $emails_array = array_filter(array_map('trim', preg_split("/[\r\n,]+/", $emailsTU, -1, PREG_SPLIT_NO_EMPTY)));
+$emails_array_comma_seperated = implode(",", $emails_array);
 $results = Array();
 if(count($emails_array)>0)
 {
@@ -113,6 +114,7 @@ if(count($emails_array)>0)
         <input type="hidden" name="hidden2" value="<?=$name?>"/>
         <input type="hidden" name="hidden3" value="<?=$email?>"/>
         <input type="hidden" name="hidden4" value="<?=$phone?>"/>
+        <input type="hidden" name="hidden5" value="<?=$emails_array_comma_seperated?>"/>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary" id="submit1">Confirm for Unsubscribtion</button>
             <a href="#modal1" role="button" class="btn" data-toggle="modal" id="anchor6">Submit Feedback</a>

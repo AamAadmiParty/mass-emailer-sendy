@@ -43,26 +43,27 @@
           <div class="control-group">
               <label class="control-label" for="input4">Name*</label>
               <div class="controls">
-                  <input type="text" name="input4" id="input4" placeholder="Your Name" />
+                  <input type="text" name="input4" id="input4" placeholder="Requesting Person's Name" />
               </div>
           </div>
           <div class="control-group">
               <label class="control-label" for="input5">Email*</label>
               <div class="controls">
-                  <input type="text" name="input5" id="input5" placeholder="Your Email" />
+                  <input type="text" name="input5" id="input5" placeholder="Requesting Person's Email" />
               </div>
           </div>
           <div class="control-group">
               <label class="control-label" for="input6">Phone*</label>
               <div class="controls">
-                  <input type="text" name="input6" id="input6" placeholder="Your Phone number" />
+                  <input type="text" name="input6" id="input6" placeholder="Requesting Person's Phone number" />
               </div>
           </div>
           <div class="control-group">
             <label for="textarea1" class="control-label">Paste emails to be unsubscribe:</label>
             <div class="controls">
-              <textarea class="span6" id="textarea1" name="textarea1" rows="10" placeholder="Paste the emails seperated by comma or a new line."></textarea>
+              <textarea class="span6" id="textarea1" name="textarea1" rows="10" placeholder="Paste the emails to be 'Unsubscribed' seperated by comma or a new line. Please note that the emails to be unsubscribed may be different from Requesting person's email above. This is a backend tool meant for volunteers managing Email Campaign. Volunteers can bulk upload email ids here of people wishing to unsubscribe themselves from AAP's email campaign. In case of any doubt please contact Prakhar @ +91-9632655560."></textarea>
             </div>
+            <br><b><i>*Note:</i></b> <b>Please note that the emails to be unsubscribed may be different from Requesting person's email above.</b> Mostly, the requesting person above will be an AAP volunteer, who will bulk upload email ids here of people wishing to unsubscribe themselves from AAP's email campaign. In case of any doubt please contact Prakhar @ +91-9632655560.
           </div>
 					<div class="form-actions">
 						<button type="submit" class="btn btn-primary" id="submit1">Unsubscribe</button>
