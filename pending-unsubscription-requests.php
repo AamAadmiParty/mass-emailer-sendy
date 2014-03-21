@@ -36,6 +36,7 @@
 				  
 				    <tr>
 				      <th><?php echo _('<input type="checkbox" class="select_all">');?></th>
+				      <th><?php echo _('Id');?></th>
 				      <th><?php echo _('Volunteer Name');?></th>
 				      <th><?php echo _('Volunteer Email');?></th>
 				      <th><?php echo _('Volunteer Phone');?></th>
@@ -63,6 +64,7 @@
 			    	?>
 			    	<tr id="row-<?echo $id;?>">
 					<td><input type="checkbox" id="" name="rows_to_edit[<?echo $id;?>]" class="multi_checkbox checkall" value="<?echo $idstounsubscribe?>"></td>
+					<td><?php echo $id;?></td>
 					<td><?php echo $name;?></td>
 					<td><?php echo $email;?></td>
 					<td><?php echo $phone;?></td>
@@ -83,9 +85,8 @@
 					}
 					?>
 					<tr>
-					<td><input type="checkbox" class="select_all"></td>
-					<td colspan="7">Select All</td>
-
+					<td><input type="checkbox" class="select_all" id="checkbox2"></td>
+					<td colspan="8"><label for="checkbox2">Select All</label></td>
 					<?
 				}
 				else				
@@ -104,6 +105,7 @@
 		  </tbody>
 		</table>	  			
         <button type="submit" class="btn btn-primary" id="submit1">Unsubscribe selected</button>      		
+        <button class="btn btn-info" id="button2">Reject selected requests</button>      		
 	    </form>
 		
 		<?php pagination($limit);?>
@@ -148,7 +150,7 @@ $(document).ready(function() {
     $("#form2").submit(function(event) {
     	event.preventDefault();
     	
-    	var data_to_send = {'ids_to_send[]':[]};
+    	var data_to_send = {'ids_to_send[]':[],'action':"approve"};
         if($(".multi_checkbox:checked").length>0)
         {
 	        $(".multi_checkbox:checked").each(function(){
@@ -159,12 +161,36 @@ $(document).ready(function() {
 	        console.log(data_to_send);
 	        $.post("includes/subscribers/manual-unsubscribe.php", data_to_send)
 				.done(function(data) {
-					console.log(data);
 					success_ids = data.split(',');
 					for(var i in success_ids)
 					{
-						console.log(success_ids[i]);
 						$('#subscription-'+success_ids[i]).text("Unsubscribed").removeClass("label-important").addClass("label-success");
+					}
+				});
+		}
+		else
+		{
+			alert("select at least one request");
+		}
+    });
+    $("#button2").click(function(event) {
+    	event.preventDefault();
+    	
+    	var data_to_send = {'ids_to_send[]':[],'action':"reject"};
+        if($(".multi_checkbox:checked").length>0)
+        {
+	        $(".multi_checkbox:checked").each(function(){
+	        	req_id = $(this).parent().parent().prop('id').split('-')[1];
+	        	payload = $(this).val();
+	        	data_to_send['ids_to_send[]'].push(req_id+"--"+payload);
+	        });
+	        console.log(data_to_send);
+	        $.post("includes/subscribers/manual-unsubscribe.php", data_to_send)
+				.done(function(data) {
+					success_ids = data.split(',');
+					for(var i in success_ids)
+					{
+						$('#subscription-'+success_ids[i]).text("Rejected").removeClass("label-success").addClass("label-important");
 					}
 				});
 		}
