@@ -54,6 +54,19 @@
 				<?php echo _('Search and Edit Users');?>
 			</a>		
 		</li>
+		<li <?php if(currentPage()=='pending-unsubscription-requests.php')
+		{
+			echo 'class="active"';
+		}
+		?>>
+			<a href="<?php echo get_app_info('path').'/pending-unsubscription-requests?i='.$_GET['i'];?>">
+				<i class="icon-align-justify  <?php if(currentPage()=='pending-unsubscription-requests.php')
+					{echo 'icon-white';}
+					?>">
+				</i> 
+				<?php echo _('Pending Unsubscription Requests');?>
+			</a>
+		</li>
     </ul>
     <ul class="nav nav-list">
         <li class="nav-header"><?php echo _('Reports');?></li>

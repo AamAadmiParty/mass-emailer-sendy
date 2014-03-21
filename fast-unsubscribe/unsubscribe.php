@@ -116,7 +116,7 @@ if(count($emails_array)>0)
         <input type="hidden" name="hidden4" value="<?=$phone?>"/>
         <input type="hidden" name="hidden5" value="<?=$emails_array_comma_seperated?>"/>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="submit1">Confirm for Unsubscribtion</button>
+            <button type="submit" class="btn btn-primary" id="submit1">Confirm for Unsubscription</button>
             <a href="#modal1" role="button" class="btn" data-toggle="modal" id="anchor6">Submit Feedback</a>
           </div>
         </form>
