@@ -62,7 +62,7 @@
 		  			$status = '<a href="javascript:void(0)" id="subscription-'.$id.'" class="label">'._('Pending').'</a>';
 
 			    	?>
-			    	<tr id="row-<?echo $id;?>">
+			    	<tr id="row-<?echo $id;?>" class="record_table">
 					<td><input type="checkbox" id="" name="rows_to_edit[<?echo $id;?>]" class="multi_checkbox checkall" value="<?echo $idstounsubscribe?>"></td>
 					<td><?php echo $id;?></td>
 					<td><?php echo $name;?></td>
@@ -132,7 +132,11 @@ $(document).ready(function() {
 
 	    lastChecked = this;
 	});
-
+	$('.record_table').click(function(event) {
+		if (event.target.type !== 'checkbox') {
+	  		$(':checkbox', this).trigger('click');
+		}
+	});
 	$('.select_all').click(function(){
 		$('.multi_checkbox, .select_all').attr('checked',this.checked);
 	});
